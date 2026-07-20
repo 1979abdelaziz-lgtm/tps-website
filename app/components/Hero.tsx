@@ -134,7 +134,7 @@ export default function Hero() {
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
 
               <Image
-                src="/hero-energy.png"
+                src="/images/hero-energy.png"
                 alt="TPS Energy Solutions"
                 width={900}
                 height={700}
