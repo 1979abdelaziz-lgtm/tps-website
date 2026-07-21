@@ -13,24 +13,58 @@ const navItems = [
 ];
 
 export default function Header() {
-  const [scrolled,setScrolled]=useState(false);
-  useEffect(()=>{
-    const onScroll=()=>setScrolled(window.scrollY>40);
-    window.addEventListener("scroll",onScroll);
-    return ()=>window.removeEventListener("scroll",onScroll);
-  },[]);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-<header className={`fixed top-0 left-0 right-0 z-50 h-[90px] transition-all duration-300 ${scrolled?"bg-white shadow-lg":"bg-gradient-to-r from-[#08203d] via-[#103766] to-[#08203d]"}`}>
-<div className="max-w-7xl mx-auto h-full px-10 flex items-center justify-between">
-<Link href="/" className="flex flex-col leading-none select-none">
-<span className={`text-[42px] font-extrabold italic ${scrolled?"text-[#08203d]":"text-white"}`}>TP<span className="relative">S<span className="absolute -top-1 right-0 w-6 h-1.5 bg-green-500 rounded-full -rotate-12"/></span></span>
-<span className="mt-1 text-[11px] font-semibold tracking-[0.28em] uppercase"><span className={scrolled?"text-[#08203d]":"text-white"}>TETRA </span><span className="text-green-500">POWER </span><span className={scrolled?"text-[#08203d]":"text-white"}>SOLUTIONS</span></span>
-</Link>
-<nav className="hidden lg:flex items-center gap-12">
-{navItems.map(item=>(
-<Link key={item.title} href={item.href} className={`relative font-semibold transition ${scrolled?"text-slate-700 hover:text-green-600":"text-white hover:text-green-400"} after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all hover:after:w-full`}>{item.title}</Link>
-))}
-</nav>
-<Link href="#contact" className="hidden lg:inline-flex items-center rounded-full bg-green-600 px-8 py-3 font-semibold text-white hover:bg-green-500 transition">Get a Quote</Link>
-</div></header>);
+    <header
+      className={`fixed inset-x-0 top-0 z-50 h-[100px] bg-white transition-shadow duration-300 ${
+        scrolled ? "shadow-lg" : "shadow-sm"
+      }`}
+    >
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 lg:px-10">
+        <Link
+          href="/"
+          aria-label="TPS - Tetra Power Solutions home"
+          className="flex shrink-0 items-center"
+        >
+          <img
+            src="/tps-logo.png"
+            alt="TPS - Tetra Power Solutions"
+            className="h-[72px] w-auto object-contain"
+          />
+        </Link>
+
+        <nav
+          aria-label="Main navigation"
+          className="hidden items-center gap-8 xl:gap-10 lg:flex"
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="relative whitespace-nowrap font-semibold text-slate-700 transition-colors hover:text-green-600 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all hover:after:w-full"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
+
+        <Link
+          href="#contact"
+          className="hidden items-center rounded-full bg-green-600 px-7 py-3 font-semibold text-white transition-colors hover:bg-green-500 lg:inline-flex"
+        >
+          Get a Quote
+        </Link>
+      </div>
+    </header>
+  );
 }
