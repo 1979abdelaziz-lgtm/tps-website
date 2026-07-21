@@ -1,0 +1,27 @@
+<svg width="210" height="86" viewBox="0 0 210 86" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TPS</title>
+  <desc id="desc">Tetra Power Solutions mark with integrated green accent in the S</desc>
+  <defs>
+    <linearGradient id="whiteMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#F7F9FC"/>
+      <stop offset="1" stop-color="#BFC8D3"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8ED63F"/>
+      <stop offset="1" stop-color="#5DBB24"/>
+    </linearGradient>
+    <clipPath id="markClip">
+      <g transform="skewX(-12)">
+        <text x="16" y="67" font-family="Arial Black, Arial, sans-serif" font-size="72" font-style="italic" font-weight="900" letter-spacing="-8">TPS</text>
+      </g>
+    </clipPath>
+  </defs>
+
+  <g transform="skewX(-12)">
+    <text x="16" y="67" fill="url(#whiteMetal)" font-family="Arial Black, Arial, sans-serif" font-size="72" font-style="italic" font-weight="900" letter-spacing="-8">TPS</text>
+  </g>
+
+  <!-- Accent is clipped by the TPS letterforms, so it becomes part of the S rather than a detached stripe. -->
+  <path d="M151 19H211L196 36H145L151 19Z" fill="url(#green)" clip-path="url(#markClip)"/>
+</svg>
