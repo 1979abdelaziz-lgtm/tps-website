@@ -7,7 +7,6 @@ const navItems = [
   { title: "Home", href: "/" },
   { title: "Solutions", href: "#solutions" },
   { title: "Industries", href: "#industries" },
-  { title: "Knowledge Center", href: "#knowledge" },
   { title: "About", href: "#about" },
   { title: "Contact", href: "#contact" },
 ];
@@ -26,7 +25,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 h-[100px] bg-white transition-shadow duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 h-[88px] bg-white transition-shadow duration-300 ${
         scrolled ? "shadow-lg" : "shadow-sm"
       }`}
     >
@@ -39,13 +38,13 @@ export default function Header() {
           <img
             src="/tps-logo.png"
             alt="TPS - Tetra Power Solutions"
-            className="h-[72px] w-auto object-contain"
+            className="h-[76px] w-auto object-contain"
           />
         </Link>
 
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-8 xl:gap-10 lg:flex"
+          className="hidden items-center gap-7 xl:gap-8 lg:flex"
         >
           {navItems.map((item) => (
             <Link
