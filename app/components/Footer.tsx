@@ -120,7 +120,9 @@ export default function Footer() {
           </div>
         </section>
 
-        <div className="grid gap-12 border-t border-white/10 py-12 sm:py-14 lg:grid-cols-[1.45fr_.7fr_.82fr_.82fr_1.05fr] lg:gap-8 lg:py-16">
+        <section className="relative overflow-hidden border-t border-white/10 py-12 sm:py-14 lg:py-16">
+          <LowerEnergyVisual />
+          <div className="relative z-10 grid gap-12 lg:grid-cols-[1.35fr_.72fr_.82fr_.82fr_1.05fr] lg:gap-8">
           <div className="max-w-[430px]">
             <Link
               href="/"
@@ -175,28 +177,30 @@ export default function Footer() {
               engineering discipline.
             </p>
 
-            <div className="mt-6 space-y-3">
-              <ContactAction
-                href="#contact"
-                icon={<Mail className="h-4 w-4" aria-hidden="true" />}
-                eyebrow="Project enquiry"
-                label="Send project details"
-              />
-              <ContactAction
-                href="#contact"
-                icon={<Phone className="h-4 w-4" aria-hidden="true" />}
-                eyebrow="Technical discussion"
-                label="Request a call back"
-              />
-              <ContactAction
-                href="#contact"
-                icon={<MapPin className="h-4 w-4" aria-hidden="true" />}
-                eyebrow="Site requirements"
-                label="Discuss project location"
-              />
-            </div>
           </div>
-        </div>
+          </div>
+
+          <div className="relative z-10 mt-12 grid gap-4 lg:mt-14 lg:grid-cols-3">
+            <ContactAction
+              href="#contact"
+              icon={<Mail className="h-5 w-5" aria-hidden="true" />}
+              eyebrow="Project enquiry"
+              label="Send project details"
+            />
+            <ContactAction
+              href="#contact"
+              icon={<Phone className="h-5 w-5" aria-hidden="true" />}
+              eyebrow="Technical discussion"
+              label="Request a call back"
+            />
+            <ContactAction
+              href="#contact"
+              icon={<MapPin className="h-5 w-5" aria-hidden="true" />}
+              eyebrow="Site requirements"
+              label="Discuss project location"
+            />
+          </div>
+        </section>
 
         <div className="grid gap-4 border-t border-white/10 pb-8 pt-9 text-xs text-slate-400 sm:grid-cols-[1fr_auto] sm:items-center">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -227,6 +231,50 @@ export default function Footer() {
 }
 
 
+
+function LowerEnergyVisual() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-[116px] top-0 hidden overflow-hidden lg:block">
+      <div className="absolute inset-y-0 right-0 w-[58%] bg-gradient-to-l from-[#061a32]/90 via-[#072846]/48 to-transparent" />
+      <div className="absolute bottom-0 right-[1%] h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="absolute bottom-0 right-[10%] h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl" />
+      <svg viewBox="0 0 980 470" className="absolute bottom-[-8px] right-[-30px] h-[94%] w-[74%] opacity-95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lower-energy" x1="20" y1="390" x2="930" y2="90" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#22D3EE" stopOpacity="0" />
+            <stop offset="0.28" stopColor="#38BDF8" stopOpacity="0.78" />
+            <stop offset="0.66" stopColor="#22D3EE" stopOpacity="0.95" />
+            <stop offset="1" stopColor="#A3E635" stopOpacity="0.94" />
+          </linearGradient>
+          <linearGradient id="lower-tower" x1="0" y1="0" x2="0" y2="1">
+            <stop stopColor="#E0F2FE" stopOpacity="0.95" />
+            <stop offset="0.48" stopColor="#22D3EE" stopOpacity="0.9" />
+            <stop offset="1" stopColor="#A3E635" stopOpacity="0.75" />
+          </linearGradient>
+          <filter id="lower-glow" x="-55%" y="-55%" width="210%" height="210%">
+            <feGaussianBlur stdDeviation="5.2" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+        <g stroke="url(#lower-energy)" strokeLinecap="round" filter="url(#lower-glow)">
+          <path d="M8 398C170 334 255 396 396 309C532 225 641 250 963 74" strokeWidth="3.2" strokeDasharray="12 13"><animate attributeName="stroke-dashoffset" values="0;-100" dur="8s" repeatCount="indefinite" /></path>
+          <path d="M3 432C177 367 300 442 455 346C598 257 711 267 974 132" strokeWidth="2.2" opacity="0.78" strokeDasharray="8 14"><animate attributeName="stroke-dashoffset" values="0;-88" dur="10s" repeatCount="indefinite" /></path>
+          <path d="M110 338C248 260 344 333 484 248C627 161 763 195 968 52" strokeWidth="1.45" opacity="0.58" strokeDasharray="6 16"><animate attributeName="stroke-dashoffset" values="0;-72" dur="12s" repeatCount="indefinite" /></path>
+          <path d="M82 455C244 408 380 450 528 377C666 309 795 298 978 208" strokeWidth="1" opacity="0.34" />
+        </g>
+        <g stroke="url(#lower-tower)" strokeWidth="2" filter="url(#lower-glow)" strokeLinejoin="round">
+          <g opacity="0.78"><path d="M355 437L414 252L473 437M372 382H456M381 347H447M392 311H436M402 278H426" /><path d="M372 382L447 347M456 382L381 347M392 311L447 347M436 311L381 347M355 437H473" /><path d="M378 292L414 252L450 292M370 303H458" /></g>
+          <g opacity="0.9"><path d="M555 437L637 181L719 437M579 365H695M591 318H683M605 268H669M620 217H654" /><path d="M579 365L683 318M695 365L591 318M605 268L683 318M669 268L591 318M555 437H719" /><path d="M590 236L637 181L684 236M579 249H695" /></g>
+          <g><path d="M736 437L848 91L960 437M768 342H928M786 282H910M806 217H890M826 151H870" /><path d="M768 342L910 282M928 342L786 282M806 217L910 282M890 217L786 282M736 437H960" /><path d="M785 164L848 91L911 164M769 181H927" /></g>
+        </g>
+        <g fill="#E0F2FE" filter="url(#lower-glow)"><circle cx="414" cy="252" r="4" /><circle cx="637" cy="181" r="5" /><circle cx="848" cy="91" r="6" /><circle cx="414" cy="437" r="4" /><circle cx="637" cy="437" r="5" /><circle cx="848" cy="437" r="6" /></g>
+        <g fill="#A3E635" filter="url(#lower-glow)"><circle cx="473" cy="437" r="4" /><circle cx="719" cy="437" r="5" /><circle cx="960" cy="437" r="6" /></g>
+      </svg>
+      <div className="absolute bottom-0 right-0 h-px w-[76%] bg-gradient-to-l from-emerald-300/70 via-cyan-300/50 to-transparent" />
+    </div>
+  );
+}
+
 function EnergyNetworkVisual() {
   return (
     <div
@@ -250,8 +298,9 @@ function EnergyNetworkVisual() {
             <stop offset="1" stopColor="#D1FAE5" stopOpacity="0.16" />
           </linearGradient>
           <linearGradient id="tower-line" x1="0" y1="0" x2="0" y2="1">
-            <stop stopColor="#D1FAE5" stopOpacity="0.5" />
-            <stop offset="1" stopColor="#34D399" stopOpacity="0.08" />
+            <stop stopColor="#E0F2FE" stopOpacity="0.88" />
+            <stop offset="0.55" stopColor="#22D3EE" stopOpacity="0.72" />
+            <stop offset="1" stopColor="#A3E635" stopOpacity="0.48" />
           </linearGradient>
           <filter id="energy-glow" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="6" result="blur" />
@@ -262,10 +311,46 @@ function EnergyNetworkVisual() {
           </filter>
         </defs>
 
-        <g stroke="url(#tower-line)" strokeWidth="1.4" opacity="0.62">
-          <path d="M400 300L458 102L516 300M422 226H494M414 255H502M438 166H478M447 132H469" />
-          <path d="M425 226L491 255M491 226L425 255M438 166L478 226M478 166L438 226" />
-          <path d="M512 300L548 184L584 300M525 258H571M533 228H563M541 202H555" opacity="0.7" />
+        <g
+          stroke="url(#tower-line)"
+          strokeWidth="1.55"
+          strokeLinejoin="round"
+          filter="url(#energy-glow)"
+        >
+          {/* Small tower */}
+          <g opacity="0.72">
+            <path d="M338 300L372 198L406 300M349 267H395M354 243H390M361 219H383" />
+            <path d="M349 267L390 243M395 267L354 243M361 219L390 243M383 219L354 243M338 300H406" />
+            <path d="M352 222L372 198L392 222M345 229H399" />
+          </g>
+
+          {/* Medium tower */}
+          <g opacity="0.82">
+            <path d="M414 300L458 153L502 300M429 255H487M423 278H493M438 218H478M447 181H469" />
+            <path d="M429 255L487 278M487 255L429 278M438 218L478 255M478 218L438 255M414 300H502" />
+            <path d="M432 188L458 153L484 188M424 198H492" />
+          </g>
+
+          {/* Large tower */}
+          <g opacity="0.94">
+            <path d="M500 300L558 88L616 300M520 236H596M512 270H604M532 184H584M544 130H572" />
+            <path d="M520 236L596 270M596 236L520 270M532 184L584 236M584 184L532 236M500 300H616" />
+            <path d="M523 142L558 88L593 142M512 155H604" />
+          </g>
+        </g>
+
+        <g fill="#E0F2FE" filter="url(#energy-glow)">
+          <circle cx="372" cy="198" r="3.2" />
+          <circle cx="458" cy="153" r="4" />
+          <circle cx="558" cy="88" r="5.2" />
+        </g>
+        <g fill="#A3E635" filter="url(#energy-glow)" opacity="0.9">
+          <circle cx="338" cy="300" r="3.2" />
+          <circle cx="406" cy="300" r="3.2" />
+          <circle cx="414" cy="300" r="3.8" />
+          <circle cx="502" cy="300" r="3.8" />
+          <circle cx="500" cy="300" r="4.5" />
+          <circle cx="616" cy="300" r="4.5" />
         </g>
 
         <g stroke="url(#energy-line)" strokeLinecap="round" filter="url(#energy-glow)">
@@ -351,16 +436,16 @@ function ContactAction({ href, icon, eyebrow, label }: ContactActionProps) {
   return (
     <Link
       href={href}
-      className="group relative flex min-h-[76px] w-full items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,.05)] transition duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(115deg,transparent,rgba(255,255,255,.08),transparent)] before:transition-transform before:duration-700 hover:-translate-y-1 hover:border-emerald-300/55 hover:bg-emerald-400/[0.09] hover:shadow-[0_18px_44px_rgba(16,185,129,.18)] hover:before:translate-x-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+      className="group relative flex min-h-[112px] w-full items-center gap-5 overflow-hidden rounded-[22px] border border-cyan-300/25 bg-[#071b33]/72 px-6 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,.06),0_18px_55px_rgba(0,0,0,.18)] backdrop-blur-md transition duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(115deg,transparent,rgba(255,255,255,.09),transparent)] before:transition-transform before:duration-700 hover:-translate-y-1.5 hover:border-emerald-300/60 hover:bg-[#0a2440]/88 hover:shadow-[0_20px_55px_rgba(16,185,129,.17),0_0_30px_rgba(34,211,238,.09)] hover:before:translate-x-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
     >
-      <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-300 shadow-[0_0_0_rgba(52,211,153,0)] transition duration-300 group-hover:scale-110 group-hover:bg-emerald-300 group-hover:text-[#041326] group-hover:shadow-[0_0_24px_rgba(52,211,153,.42)]">
+      <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-cyan-200/25 bg-white/[0.035] text-emerald-300 shadow-[inset_0_0_22px_rgba(56,189,248,.08),0_0_24px_rgba(34,211,238,.08)] transition duration-300 group-hover:scale-105 group-hover:border-emerald-300/60 group-hover:bg-emerald-300 group-hover:text-[#041326] group-hover:shadow-[0_0_28px_rgba(52,211,153,.42)]">
         {icon}
       </span>
       <span className="relative z-10 min-w-0">
-        <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+        <span className="block text-[11px] font-semibold uppercase tracking-[0.17em] text-emerald-400">
           {eyebrow}
         </span>
-        <span className="mt-1 block text-sm font-semibold text-slate-200 transition group-hover:text-white">
+        <span className="mt-2 block text-base font-semibold text-slate-100 transition group-hover:text-white sm:text-lg">
           {label}
         </span>
       </span>
