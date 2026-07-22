@@ -136,8 +136,8 @@ export default function Footer() {
                   className="h-auto w-full object-contain drop-shadow-[0_10px_28px_rgba(0,0,0,.3)]"
                 />
               </span>
-              <span className="min-w-0">
-                <span className="block text-[14px] font-bold uppercase leading-tight tracking-[0.115em] text-white sm:text-[16px]">
+              <span className="relative z-10 min-w-0">
+                <span className="block whitespace-nowrap text-[13px] font-bold uppercase leading-tight tracking-[0.09em] text-white sm:text-[15px] lg:text-[14px] xl:text-[16px]">
                   Tetra Power Solutions
                 </span>
                 <span className="mt-2 block whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.18em] text-emerald-400 sm:text-[10px] xl:text-[11px]">
@@ -231,29 +231,30 @@ function EnergyNetworkVisual() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden w-[48%] overflow-hidden lg:block"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden lg:block"
     >
-      <div className="absolute inset-0 bg-gradient-to-l from-[#082c4c]/95 via-[#082c4c]/35 to-transparent" />
-      <div className="absolute right-[-5%] top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-emerald-400/10 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-l from-[#082c4c]/95 via-[#0a355d]/45 to-transparent" />
+      <div className="absolute right-[-2%] top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-emerald-400/16 blur-3xl" />
 
       <svg
         viewBox="0 0 620 330"
-        className="absolute bottom-[-8px] right-[-18px] h-[92%] w-[96%] opacity-70"
+        className="absolute bottom-[-18px] right-[-26px] h-[112%] w-[112%] opacity-95"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <linearGradient id="energy-line" x1="55" y1="55" x2="575" y2="270" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#34D399" stopOpacity="0" />
-            <stop offset="0.48" stopColor="#34D399" stopOpacity="0.82" />
-            <stop offset="1" stopColor="#A7F3D0" stopOpacity="0.08" />
+            <stop stopColor="#38BDF8" stopOpacity="0" />
+            <stop offset="0.26" stopColor="#38BDF8" stopOpacity="0.78" />
+            <stop offset="0.58" stopColor="#6EE7B7" stopOpacity="1" />
+            <stop offset="1" stopColor="#D1FAE5" stopOpacity="0.16" />
           </linearGradient>
           <linearGradient id="tower-line" x1="0" y1="0" x2="0" y2="1">
             <stop stopColor="#D1FAE5" stopOpacity="0.5" />
             <stop offset="1" stopColor="#34D399" stopOpacity="0.08" />
           </linearGradient>
-          <filter id="energy-glow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="3.5" result="blur" />
+          <filter id="energy-glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
@@ -268,15 +269,35 @@ function EnergyNetworkVisual() {
         </g>
 
         <g stroke="url(#energy-line)" strokeLinecap="round" filter="url(#energy-glow)">
-          <path d="M36 238C142 155 235 264 347 182C422 127 478 139 606 75" strokeWidth="2.2" />
-          <path d="M88 277C190 202 263 287 368 226C445 182 508 187 614 139" strokeWidth="1.25" opacity="0.58" />
-          <path d="M135 104C234 74 285 143 371 116C454 90 509 100 605 45" strokeWidth="1" opacity="0.34" />
+          <path d="M18 250C128 148 238 275 350 178C430 110 500 132 620 58" strokeWidth="3.6" />
+          <path d="M58 292C176 194 266 300 374 224C456 167 530 183 626 126" strokeWidth="2" opacity="0.78" />
+          <path d="M92 111C212 61 292 151 382 108C470 66 538 92 620 35" strokeWidth="1.55" opacity="0.56" />
+          <path d="M8 207C118 170 205 221 300 160C402 94 492 116 610 84" strokeWidth="1" opacity="0.35" />
         </g>
 
-        <g fill="#6EE7B7" filter="url(#energy-glow)">
-          <circle cx="347" cy="182" r="4" />
-          <circle cx="458" cy="143" r="3.5" />
-          <circle cx="551" cy="104" r="3" />
+        <g stroke="#ECFDF5" strokeLinecap="round" fill="none" filter="url(#energy-glow)">
+          <path
+            d="M18 250C128 148 238 275 350 178C430 110 500 132 620 58"
+            strokeWidth="2.2"
+            strokeDasharray="8 120"
+            opacity="0.9"
+          >
+            <animate attributeName="stroke-dashoffset" from="128" to="0" dur="5.8s" repeatCount="indefinite" />
+          </path>
+          <path
+            d="M58 292C176 194 266 300 374 224C456 167 530 183 626 126"
+            strokeWidth="1.25"
+            strokeDasharray="5 150"
+            opacity="0.65"
+          >
+            <animate attributeName="stroke-dashoffset" from="155" to="0" dur="7.2s" repeatCount="indefinite" />
+          </path>
+        </g>
+
+        <g fill="#A7F3D0" filter="url(#energy-glow)">
+          <circle cx="350" cy="178" r="5.5" />
+          <circle cx="465" cy="131" r="4.5" />
+          <circle cx="562" cy="92" r="4" />
         </g>
         <g fill="#A7F3D0" opacity="0.45">
           <circle cx="210" cy="207" r="2.4" />
@@ -330,12 +351,12 @@ function ContactAction({ href, icon, eyebrow, label }: ContactActionProps) {
   return (
     <Link
       href={href}
-      className="group flex min-h-[76px] w-full items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition duration-300 hover:-translate-y-1 hover:border-emerald-400/45 hover:bg-emerald-400/[0.075] hover:shadow-[0_16px_40px_rgba(16,185,129,.13)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+      className="group relative flex min-h-[76px] w-full items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,.05)] transition duration-300 before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(115deg,transparent,rgba(255,255,255,.08),transparent)] before:transition-transform before:duration-700 hover:-translate-y-1 hover:border-emerald-300/55 hover:bg-emerald-400/[0.09] hover:shadow-[0_18px_44px_rgba(16,185,129,.18)] hover:before:translate-x-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
     >
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-400 transition duration-300 group-hover:scale-105 group-hover:bg-emerald-400 group-hover:text-[#041326]">
+      <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-300 shadow-[0_0_0_rgba(52,211,153,0)] transition duration-300 group-hover:scale-110 group-hover:bg-emerald-300 group-hover:text-[#041326] group-hover:shadow-[0_0_24px_rgba(52,211,153,.42)]">
         {icon}
       </span>
-      <span className="min-w-0">
+      <span className="relative z-10 min-w-0">
         <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
           {eyebrow}
         </span>
@@ -344,7 +365,7 @@ function ContactAction({ href, icon, eyebrow, label }: ContactActionProps) {
         </span>
       </span>
       <ArrowUpRight
-        className="ml-auto h-4 w-4 shrink-0 text-slate-600 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-emerald-400"
+        className="relative z-10 ml-auto h-4 w-4 shrink-0 text-slate-600 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-emerald-300"
         aria-hidden="true"
       />
     </Link>
