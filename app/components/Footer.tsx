@@ -9,6 +9,10 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  Sun,
+  BatteryCharging,
+  CarFront,
+  Network,
 } from "lucide-react";
 
 const companyLinks = [
@@ -233,44 +237,138 @@ export default function Footer() {
 
 
 function LowerEnergyVisual() {
+  const hudItems = [
+    { label: "Solar", icon: <Sun className="h-3.5 w-3.5" /> },
+    { label: "Storage", icon: <BatteryCharging className="h-3.5 w-3.5" /> },
+    { label: "EV", icon: <CarFront className="h-3.5 w-3.5" /> },
+    { label: "Smart grid", icon: <Network className="h-3.5 w-3.5" /> },
+  ];
+
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-[116px] top-0 hidden overflow-hidden lg:block">
-      <div className="absolute inset-y-0 right-0 w-[58%] bg-gradient-to-l from-[#061a32]/90 via-[#072846]/48 to-transparent" />
-      <div className="absolute bottom-0 right-[1%] h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="absolute bottom-0 right-[10%] h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl" />
-      <svg viewBox="0 0 980 470" className="absolute bottom-[-8px] right-[-30px] h-[94%] w-[74%] opacity-95" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-0 bottom-[116px] top-0 hidden overflow-hidden lg:block"
+    >
+      <div className="absolute inset-y-0 right-0 w-[66%] bg-gradient-to-l from-[#061a32]/95 via-[#072846]/52 to-transparent" />
+      <div className="absolute bottom-[-8%] right-[-2%] h-[430px] w-[560px] rounded-full bg-cyan-400/[0.08] blur-3xl" />
+      <div className="absolute bottom-[-4%] right-[20%] h-[360px] w-[430px] rounded-full bg-emerald-400/[0.07] blur-3xl" />
+
+      <svg
+        viewBox="0 0 1100 520"
+        className="absolute bottom-[-32px] right-[-48px] h-[100%] w-[78%]"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
-          <linearGradient id="lower-energy" x1="20" y1="390" x2="930" y2="90" gradientUnits="userSpaceOnUse">
+          <linearGradient id="solar-line" x1="90" y1="490" x2="1030" y2="74" gradientUnits="userSpaceOnUse">
             <stop stopColor="#22D3EE" stopOpacity="0" />
-            <stop offset="0.28" stopColor="#38BDF8" stopOpacity="0.78" />
-            <stop offset="0.66" stopColor="#22D3EE" stopOpacity="0.95" />
-            <stop offset="1" stopColor="#A3E635" stopOpacity="0.94" />
+            <stop offset="0.24" stopColor="#38BDF8" stopOpacity="0.72" />
+            <stop offset="0.62" stopColor="#22D3EE" stopOpacity="0.94" />
+            <stop offset="1" stopColor="#A3E635" stopOpacity="0.9" />
           </linearGradient>
-          <linearGradient id="lower-tower" x1="0" y1="0" x2="0" y2="1">
-            <stop stopColor="#E0F2FE" stopOpacity="0.95" />
-            <stop offset="0.48" stopColor="#22D3EE" stopOpacity="0.9" />
-            <stop offset="1" stopColor="#A3E635" stopOpacity="0.75" />
+          <linearGradient id="panel-stroke" x1="250" y1="180" x2="910" y2="480" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#7DD3FC" stopOpacity="0.17" />
+            <stop offset="0.55" stopColor="#38BDF8" stopOpacity="0.28" />
+            <stop offset="1" stopColor="#86EFAC" stopOpacity="0.14" />
           </linearGradient>
-          <filter id="lower-glow" x="-55%" y="-55%" width="210%" height="210%">
-            <feGaussianBlur stdDeviation="5.2" result="blur" />
+          <linearGradient id="city-stroke" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#38BDF8" stopOpacity="0.16" />
+            <stop offset="1" stopColor="#A3E635" stopOpacity="0.11" />
+          </linearGradient>
+          <filter id="solar-glow" x="-55%" y="-55%" width="210%" height="210%">
+            <feGaussianBlur stdDeviation="4.6" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+          <filter id="solar-soft-glow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="2.8" result="blur" />
             <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
           </filter>
         </defs>
-        <g stroke="url(#lower-energy)" strokeLinecap="round" filter="url(#lower-glow)">
-          <path d="M8 398C170 334 255 396 396 309C532 225 641 250 963 74" strokeWidth="3.2" strokeDasharray="12 13"><animate attributeName="stroke-dashoffset" values="0;-100" dur="8s" repeatCount="indefinite" /></path>
-          <path d="M3 432C177 367 300 442 455 346C598 257 711 267 974 132" strokeWidth="2.2" opacity="0.78" strokeDasharray="8 14"><animate attributeName="stroke-dashoffset" values="0;-88" dur="10s" repeatCount="indefinite" /></path>
-          <path d="M110 338C248 260 344 333 484 248C627 161 763 195 968 52" strokeWidth="1.45" opacity="0.58" strokeDasharray="6 16"><animate attributeName="stroke-dashoffset" values="0;-72" dur="12s" repeatCount="indefinite" /></path>
-          <path d="M82 455C244 408 380 450 528 377C666 309 795 298 978 208" strokeWidth="1" opacity="0.34" />
+
+        {/* Distant infrastructure skyline, kept intentionally quiet. */}
+        <g stroke="url(#city-stroke)" strokeWidth="1.2" opacity="0.62">
+          <path d="M720 222V152H762V222M770 222V128H814V222M822 222V166H852V222M861 222V108H905V222M915 222V142H950V222M960 222V174H990V222" />
+          <path d="M699 222H1012" opacity="0.55" />
+          <path d="M785 128V97M884 108V78M937 142V112" opacity="0.45" />
         </g>
-        <g stroke="url(#lower-tower)" strokeWidth="2" filter="url(#lower-glow)" strokeLinejoin="round">
-          <g opacity="0.78"><path d="M355 437L414 252L473 437M372 382H456M381 347H447M392 311H436M402 278H426" /><path d="M372 382L447 347M456 382L381 347M392 311L447 347M436 311L381 347M355 437H473" /><path d="M378 292L414 252L450 292M370 303H458" /></g>
-          <g opacity="0.9"><path d="M555 437L637 181L719 437M579 365H695M591 318H683M605 268H669M620 217H654" /><path d="M579 365L683 318M695 365L591 318M605 268L683 318M669 268L591 318M555 437H719" /><path d="M590 236L637 181L684 236M579 249H695" /></g>
-          <g><path d="M736 437L848 91L960 437M768 342H928M786 282H910M806 217H890M826 151H870" /><path d="M768 342L910 282M928 342L786 282M806 217L910 282M890 217L786 282M736 437H960" /><path d="M785 164L848 91L911 164M769 181H927" /></g>
+
+        {/* Solar farm wireframe. */}
+        <g stroke="url(#panel-stroke)" strokeWidth="1.15" opacity="0.86">
+          <g transform="translate(286 182) skewX(-22)">
+            <rect width="156" height="96" rx="2" />
+            <path d="M31 0V96M62 0V96M93 0V96M124 0V96M0 32H156M0 64H156" />
+            <path d="M78 96V117M50 117H106" opacity="0.72" />
+          </g>
+          <g transform="translate(465 203) skewX(-22)">
+            <rect width="181" height="111" rx="2" />
+            <path d="M36 0V111M72 0V111M108 0V111M144 0V111M0 37H181M0 74H181" />
+            <path d="M90 111V136M58 136H122" opacity="0.72" />
+          </g>
+          <g transform="translate(672 232) skewX(-22)">
+            <rect width="205" height="126" rx="2" />
+            <path d="M41 0V126M82 0V126M123 0V126M164 0V126M0 42H205M0 84H205" />
+            <path d="M102 126V154M67 154H137" opacity="0.72" />
+          </g>
+          <g transform="translate(111 276) skewX(-22)" opacity="0.64">
+            <rect width="150" height="92" rx="2" />
+            <path d="M30 0V92M60 0V92M90 0V92M120 0V92M0 31H150M0 61H150" />
+          </g>
+          <g transform="translate(312 320) skewX(-22)" opacity="0.72">
+            <rect width="177" height="108" rx="2" />
+            <path d="M35 0V108M70 0V108M105 0V108M140 0V108M0 36H177M0 72H177" />
+          </g>
+          <g transform="translate(545 365) skewX(-22)" opacity="0.76">
+            <rect width="214" height="130" rx="2" />
+            <path d="M43 0V130M86 0V130M129 0V130M172 0V130M0 43H214M0 86H214" />
+          </g>
         </g>
-        <g fill="#E0F2FE" filter="url(#lower-glow)"><circle cx="414" cy="252" r="4" /><circle cx="637" cy="181" r="5" /><circle cx="848" cy="91" r="6" /><circle cx="414" cy="437" r="4" /><circle cx="637" cy="437" r="5" /><circle cx="848" cy="437" r="6" /></g>
-        <g fill="#A3E635" filter="url(#lower-glow)"><circle cx="473" cy="437" r="4" /><circle cx="719" cy="437" r="5" /><circle cx="960" cy="437" r="6" /></g>
+
+        {/* Ground mesh adds depth without becoming a literal illustration. */}
+        <g stroke="#7DD3FC" strokeWidth="0.7" opacity="0.075">
+          <path d="M43 488L374 150M132 505L451 171M226 520L534 197M335 520L624 226M457 520L723 255M590 520L823 287M730 520L929 319" />
+          <path d="M42 488H846M77 449H879M119 410H916M166 371H952M217 332H990M273 293H1023" />
+        </g>
+
+        {/* Animated energy flow across the solar array. */}
+        <g stroke="url(#solar-line)" strokeLinecap="round" filter="url(#solar-glow)">
+          <path d="M18 443C170 370 287 448 441 350C588 256 703 287 1065 76" strokeWidth="3.2" opacity="0.92" />
+          <path d="M6 482C184 414 326 486 496 391C648 306 778 318 1080 152" strokeWidth="2.15" opacity="0.72" />
+          <path d="M128 352C267 275 370 348 518 264C670 178 806 206 1067 58" strokeWidth="1.35" opacity="0.5" />
+        </g>
+        <g stroke="#ECFDF5" strokeLinecap="round" fill="none" filter="url(#solar-glow)">
+          <path d="M18 443C170 370 287 448 441 350C588 256 703 287 1065 76" strokeWidth="1.9" strokeDasharray="10 145" opacity="0.86">
+            <animate attributeName="stroke-dashoffset" values="155;0" dur="6.8s" repeatCount="indefinite" />
+          </path>
+          <path d="M6 482C184 414 326 486 496 391C648 306 778 318 1080 152" strokeWidth="1.15" strokeDasharray="7 178" opacity="0.56">
+            <animate attributeName="stroke-dashoffset" values="185;0" dur="9.2s" repeatCount="indefinite" />
+          </path>
+        </g>
+
+        <g fill="#CFFAFE" filter="url(#solar-soft-glow)">
+          <circle cx="441" cy="350" r="4"><animate attributeName="opacity" values="0.35;1;0.35" dur="3.1s" repeatCount="indefinite" /></circle>
+          <circle cx="625" cy="272" r="3.4"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.8s" repeatCount="indefinite" /></circle>
+          <circle cx="846" cy="205" r="3"><animate attributeName="opacity" values="0.25;0.84;0.25" dur="4.5s" repeatCount="indefinite" /></circle>
+        </g>
+        <g fill="#BEF264" filter="url(#solar-soft-glow)" opacity="0.82">
+          <circle cx="540" cy="310" r="2.8" />
+          <circle cx="760" cy="246" r="2.5" />
+          <circle cx="962" cy="140" r="2.9" />
+        </g>
       </svg>
-      <div className="absolute bottom-0 right-0 h-px w-[76%] bg-gradient-to-l from-emerald-300/70 via-cyan-300/50 to-transparent" />
+
+      <div className="absolute right-[4.5%] top-[20%] grid grid-cols-2 gap-2 opacity-70">
+        {hudItems.map((item, index) => (
+          <div
+            key={item.label}
+            className={`flex items-center gap-2 rounded-lg border border-cyan-200/15 bg-[#071b33]/58 px-2.5 py-2 text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-100/70 backdrop-blur-sm ${index === 3 ? "translate-x-4" : ""}`}
+          >
+            <span className="text-emerald-300/75">{item.icon}</span>
+            {item.label}
+          </div>
+        ))}
+      </div>
+
+      <div className="absolute bottom-0 right-0 h-px w-[82%] bg-gradient-to-l from-emerald-300/55 via-cyan-300/35 to-transparent" />
     </div>
   );
 }
@@ -279,31 +377,40 @@ function EnergyNetworkVisual() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden lg:block"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] overflow-hidden lg:block"
     >
-      <div className="absolute inset-0 bg-gradient-to-l from-[#082c4c]/95 via-[#0a355d]/45 to-transparent" />
-      <div className="absolute right-[-2%] top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-emerald-400/16 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-l from-[#082c4c]/72 via-[#0a355d]/28 to-transparent" />
+      <div className="absolute right-[3%] top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-cyan-400/[0.07] blur-3xl" />
+      <div className="absolute right-[16%] top-[44%] h-64 w-64 -translate-y-1/2 rounded-full bg-emerald-400/[0.055] blur-3xl" />
 
       <svg
-        viewBox="0 0 620 330"
-        className="absolute bottom-[-18px] right-[-26px] h-[112%] w-[112%] opacity-95"
+        viewBox="0 0 700 360"
+        className="absolute bottom-[-14px] right-[-18px] h-[112%] w-[112%]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="energy-line" x1="55" y1="55" x2="575" y2="270" gradientUnits="userSpaceOnUse">
+          <linearGradient id="energy-flow" x1="20" y1="300" x2="680" y2="55" gradientUnits="userSpaceOnUse">
             <stop stopColor="#38BDF8" stopOpacity="0" />
-            <stop offset="0.26" stopColor="#38BDF8" stopOpacity="0.78" />
-            <stop offset="0.58" stopColor="#6EE7B7" stopOpacity="1" />
-            <stop offset="1" stopColor="#D1FAE5" stopOpacity="0.16" />
+            <stop offset="0.25" stopColor="#38BDF8" stopOpacity="0.62" />
+            <stop offset="0.62" stopColor="#22D3EE" stopOpacity="0.9" />
+            <stop offset="0.83" stopColor="#86EFAC" stopOpacity="0.92" />
+            <stop offset="1" stopColor="#D9F99D" stopOpacity="0.42" />
           </linearGradient>
-          <linearGradient id="tower-line" x1="0" y1="0" x2="0" y2="1">
-            <stop stopColor="#E0F2FE" stopOpacity="0.88" />
-            <stop offset="0.55" stopColor="#22D3EE" stopOpacity="0.72" />
-            <stop offset="1" stopColor="#A3E635" stopOpacity="0.48" />
+          <linearGradient id="tower-background" x1="0" y1="0" x2="0" y2="1">
+            <stop stopColor="#7DD3FC" stopOpacity="0.22" />
+            <stop offset="0.55" stopColor="#38BDF8" stopOpacity="0.14" />
+            <stop offset="1" stopColor="#86EFAC" stopOpacity="0.1" />
           </linearGradient>
-          <filter id="energy-glow" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="6" result="blur" />
+          <filter id="flow-glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="4.8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="soft-point-glow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="3.2" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
@@ -311,87 +418,78 @@ function EnergyNetworkVisual() {
           </filter>
         </defs>
 
+        {/* Background towers: intentionally subdued so they read as atmosphere, not foreground objects. */}
         <g
-          stroke="url(#tower-line)"
-          strokeWidth="1.55"
+          stroke="url(#tower-background)"
+          strokeWidth="1.15"
           strokeLinejoin="round"
-          filter="url(#energy-glow)"
+          opacity="0.52"
         >
-          {/* Small tower */}
-          <g opacity="0.72">
-            <path d="M338 300L372 198L406 300M349 267H395M354 243H390M361 219H383" />
-            <path d="M349 267L390 243M395 267L354 243M361 219L390 243M383 219L354 243M338 300H406" />
-            <path d="M352 222L372 198L392 222M345 229H399" />
+          <g>
+            <path d="M386 319L424 205L462 319M398 282H450M404 255H444M412 229H436" />
+            <path d="M398 282L444 255M450 282L404 255M412 229L444 255M436 229L404 255M386 319H462" />
+            <path d="M402 232L424 205L446 232M395 240H453" />
           </g>
-
-          {/* Medium tower */}
-          <g opacity="0.82">
-            <path d="M414 300L458 153L502 300M429 255H487M423 278H493M438 218H478M447 181H469" />
-            <path d="M429 255L487 278M487 255L429 278M438 218L478 255M478 218L438 255M414 300H502" />
-            <path d="M432 188L458 153L484 188M424 198H492" />
+          <g>
+            <path d="M474 319L523 157L572 319M491 270H555M484 294H562M501 229H545M511 188H535" />
+            <path d="M491 270L555 294M555 270L491 294M501 229L545 270M545 229L501 270M474 319H572" />
+            <path d="M494 195L523 157L552 195M486 205H560" />
           </g>
-
-          {/* Large tower */}
-          <g opacity="0.94">
-            <path d="M500 300L558 88L616 300M520 236H596M512 270H604M532 184H584M544 130H572" />
-            <path d="M520 236L596 270M596 236L520 270M532 184L584 236M584 184L532 236M500 300H616" />
-            <path d="M523 142L558 88L593 142M512 155H604" />
+          <g>
+            <path d="M570 319L635 76L700 319M593 246H677M584 284H686M606 187H664M620 125H650" />
+            <path d="M593 246L677 284M677 246L593 284M606 187L664 246M664 187L606 246M570 319H700" />
+            <path d="M596 139L635 76L674 139M584 153H686" />
           </g>
         </g>
 
-        <g fill="#E0F2FE" filter="url(#energy-glow)">
-          <circle cx="372" cy="198" r="3.2" />
-          <circle cx="458" cy="153" r="4" />
-          <circle cx="558" cy="88" r="5.2" />
-        </g>
-        <g fill="#A3E635" filter="url(#energy-glow)" opacity="0.9">
-          <circle cx="338" cy="300" r="3.2" />
-          <circle cx="406" cy="300" r="3.2" />
-          <circle cx="414" cy="300" r="3.8" />
-          <circle cx="502" cy="300" r="3.8" />
-          <circle cx="500" cy="300" r="4.5" />
-          <circle cx="616" cy="300" r="4.5" />
+        {/* Low-contrast infrastructure wires behind the animated energy. */}
+        <g stroke="#7DD3FC" strokeWidth="0.75" opacity="0.09">
+          <path d="M420 205C486 168 565 126 635 76" />
+          <path d="M424 232C497 204 568 179 635 153" />
+          <path d="M424 255C503 237 568 221 635 205" />
+          <path d="M424 282C511 275 575 268 635 261" />
         </g>
 
-        <g stroke="url(#energy-line)" strokeLinecap="round" filter="url(#energy-glow)">
-          <path d="M18 250C128 148 238 275 350 178C430 110 500 132 620 58" strokeWidth="3.6" />
-          <path d="M58 292C176 194 266 300 374 224C456 167 530 183 626 126" strokeWidth="2" opacity="0.78" />
-          <path d="M92 111C212 61 292 151 382 108C470 66 538 92 620 35" strokeWidth="1.55" opacity="0.56" />
-          <path d="M8 207C118 170 205 221 300 160C402 94 492 116 610 84" strokeWidth="1" opacity="0.35" />
+        {/* Main animated energy paths. */}
+        <g stroke="url(#energy-flow)" strokeLinecap="round" filter="url(#flow-glow)">
+          <path d="M12 292C132 194 232 304 356 214C448 147 530 168 696 66" strokeWidth="3.3" opacity="0.92" />
+          <path d="M28 330C165 236 266 337 395 260C492 202 574 214 704 142" strokeWidth="2.15" opacity="0.76" />
+          <path d="M112 132C236 72 326 166 425 116C524 66 596 92 696 32" strokeWidth="1.4" opacity="0.52" />
+          <path d="M5 236C126 194 224 248 330 184C438 119 540 137 690 91" strokeWidth="0.95" opacity="0.3" />
         </g>
 
-        <g stroke="#ECFDF5" strokeLinecap="round" fill="none" filter="url(#energy-glow)">
+        {/* Moving highlights preserve the requested animation while remaining elegant. */}
+        <g stroke="#ECFDF5" strokeLinecap="round" fill="none" filter="url(#flow-glow)">
           <path
-            d="M18 250C128 148 238 275 350 178C430 110 500 132 620 58"
-            strokeWidth="2.2"
-            strokeDasharray="8 120"
+            d="M12 292C132 194 232 304 356 214C448 147 530 168 696 66"
+            strokeWidth="2"
+            strokeDasharray="10 145"
             opacity="0.9"
           >
-            <animate attributeName="stroke-dashoffset" from="128" to="0" dur="5.8s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="155;0" dur="6.4s" repeatCount="indefinite" />
           </path>
           <path
-            d="M58 292C176 194 266 300 374 224C456 167 530 183 626 126"
+            d="M28 330C165 236 266 337 395 260C492 202 574 214 704 142"
             strokeWidth="1.25"
-            strokeDasharray="5 150"
-            opacity="0.65"
+            strokeDasharray="7 170"
+            opacity="0.62"
           >
-            <animate attributeName="stroke-dashoffset" from="155" to="0" dur="7.2s" repeatCount="indefinite" />
+            <animate attributeName="stroke-dashoffset" values="177;0" dur="8.2s" repeatCount="indefinite" />
           </path>
         </g>
 
-        <g fill="#A7F3D0" filter="url(#energy-glow)">
-          <circle cx="350" cy="178" r="5.5" />
-          <circle cx="465" cy="131" r="4.5" />
-          <circle cx="562" cy="92" r="4" />
+        <g fill="#CFFAFE" filter="url(#soft-point-glow)">
+          <circle cx="356" cy="214" r="4.2"><animate attributeName="opacity" values="0.45;1;0.45" dur="3.2s" repeatCount="indefinite" /></circle>
+          <circle cx="492" cy="156" r="3.6"><animate attributeName="opacity" values="0.35;0.9;0.35" dur="3.8s" repeatCount="indefinite" /></circle>
+          <circle cx="610" cy="111" r="3.2"><animate attributeName="opacity" values="0.35;0.85;0.35" dur="4.4s" repeatCount="indefinite" /></circle>
         </g>
-        <g fill="#A7F3D0" opacity="0.45">
-          <circle cx="210" cy="207" r="2.4" />
-          <circle cx="399" cy="208" r="2" />
-          <circle cx="523" cy="181" r="2" />
+        <g fill="#BEF264" filter="url(#soft-point-glow)" opacity="0.8">
+          <circle cx="441" cy="184" r="3.1" />
+          <circle cx="569" cy="147" r="2.7" />
         </g>
       </svg>
 
-      <div className="absolute bottom-0 right-0 h-px w-[92%] bg-gradient-to-l from-emerald-300/30 to-transparent" />
+      <div className="absolute bottom-0 right-0 h-px w-[94%] bg-gradient-to-l from-emerald-300/20 via-cyan-300/12 to-transparent" />
     </div>
   );
 }
