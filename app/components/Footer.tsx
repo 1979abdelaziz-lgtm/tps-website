@@ -61,7 +61,7 @@ export default function Footer() {
       />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <section className="py-10 sm:py-14 lg:py-16">
+        <section className="pb-8 pt-10 sm:pb-10 sm:pt-14 lg:pb-10 lg:pt-16">
           <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.06] px-6 py-8 shadow-[0_28px_100px_rgba(0,0,0,.34)] backdrop-blur-md sm:px-9 sm:py-10 lg:px-12 lg:py-12">
             <div
               aria-hidden="true"
@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden border-t border-white/10 py-12 sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden border-t border-white/10 pb-12 pt-9 sm:pb-14 sm:pt-10 lg:pb-16 lg:pt-11">
           <LowerEnergyVisual />
           <div className="relative z-10 grid gap-12 lg:grid-cols-[1.35fr_.72fr_.82fr_.82fr_1.05fr] lg:gap-8">
           <div className="max-w-[430px]">
@@ -211,11 +211,11 @@ export default function Footer() {
           </div>
         </section>
 
-        <div className="grid gap-4 border-t border-white/[0.07] pb-8 pt-9 text-xs text-slate-500 sm:grid-cols-[1fr_auto] sm:items-center">
+        <div className="grid gap-4 border-t border-white/[0.09] pb-8 pt-9 text-xs text-slate-400 sm:grid-cols-[1fr_auto] sm:items-center">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <p>© {currentYear} Tetra Power Solutions. All rights reserved.</p>
             <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
-            <p className="text-slate-500">Engineering with integrity. Delivering with care.</p>
+            <p className="text-slate-400">Engineering with integrity. Delivering with care.</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -252,7 +252,7 @@ function LowerEnergyVisual() {
       <svg
         viewBox="0 0 1440 620"
         preserveAspectRatio="xMaxYMid slice"
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-[104%] translate-x-[5%]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -324,7 +324,7 @@ function LowerEnergyVisual() {
         </g>
       </svg>
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,#041326_0%,rgba(4,19,38,.98)_25%,rgba(4,19,38,.76)_50%,rgba(4,19,38,.16)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#041326_0%,rgba(4,19,38,.99)_28%,rgba(4,19,38,.88)_52%,rgba(4,19,38,.42)_74%,rgba(4,19,38,.18)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#041326]/82 via-transparent to-[#041326]/92" />
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#041326] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#041326] to-transparent" />
@@ -344,7 +344,7 @@ function EnergyNetworkVisual() {
 
       <svg
         viewBox="0 0 700 360"
-        className="absolute bottom-[-14px] right-[-18px] h-[112%] w-[112%] opacity-90"
+        className="absolute bottom-[-14px] right-[-46px] h-[112%] w-[112%] opacity-[0.76]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
