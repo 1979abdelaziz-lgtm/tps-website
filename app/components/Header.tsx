@@ -18,16 +18,13 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
-
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -35,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071b33]/95 text-white backdrop-blur-xl transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 bg-[#03101f]/98 text-white backdrop-blur-xl transition-all duration-300 ${
         scrolled ? "shadow-[0_12px_32px_rgba(0,0,0,0.24)]" : ""
       }`}
     >
@@ -59,9 +56,9 @@ export default function Header() {
 
           <span className="hidden min-w-0 flex-col justify-center leading-none sm:flex">
             <span className="whitespace-nowrap text-[13px] font-extrabold tracking-[0.025em] text-white lg:text-[14px] xl:text-[15px]">
-              TETRA <span className="text-[#79c843]">POWER</span> SOLUTIONS
+              TETRA <span className="text-[#A3E635]">POWER</span> SOLUTIONS
             </span>
-            <span className="mt-1 whitespace-nowrap text-[9px] font-semibold tracking-[0.04em] text-[#79c843] lg:text-[10px] xl:text-[11px]">
+            <span className="mt-1 whitespace-nowrap text-[9px] font-semibold tracking-[0.04em] text-[#A3E635] lg:text-[10px] xl:text-[11px]">
               INTEGRATED ENERGY SOLUTIONS
             </span>
           </span>
@@ -75,13 +72,13 @@ export default function Header() {
             <Link
               key={item.title}
               href={item.href}
-              className={`group relative whitespace-nowrap py-2 text-[15px] font-semibold tracking-[0.01em] transition-colors duration-200 hover:text-[#79c843] ${
+              className={`group relative whitespace-nowrap py-2 text-[15px] font-semibold tracking-[0.01em] transition-colors duration-200 hover:text-[#A3E635] ${
                 index === 0 ? "text-white" : "text-white/80"
               }`}
             >
               {item.title}
               <span
-                className={`absolute inset-x-0 -bottom-1 mx-auto h-0.5 rounded-full bg-[#79c843] transition-all duration-300 ${
+                className={`absolute inset-x-0 -bottom-1 mx-auto h-0.5 rounded-full bg-[#A3E635] transition-all duration-300 ${
                   index === 0 ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
@@ -92,7 +89,7 @@ export default function Header() {
         <div className="relative z-50 flex items-center gap-2.5 sm:gap-3">
           <Link
             href="#contact"
-            className="hidden items-center justify-center rounded-full border-2 border-[#69bd45] bg-transparent px-5 py-2.5 text-sm font-bold text-[#69bd45] shadow-[0_8px_24px_rgba(105,189,69,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#69bd45] hover:text-[#071b33] hover:shadow-[0_12px_28px_rgba(105,189,69,0.3)] sm:inline-flex xl:px-6"
+            className="hidden items-center justify-center rounded-full border-2 border-[#A3E635] bg-transparent px-5 py-2.5 text-sm font-bold text-[#A3E635] shadow-[0_8px_24px_rgba(163,230,53,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#A3E635] hover:text-[#03101f] hover:shadow-[0_12px_28px_rgba(163,230,53,0.26)] sm:inline-flex xl:px-6"
           >
             Request a Quote
           </Link>
@@ -127,7 +124,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed inset-0 top-[78px] bg-[#071b33] transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 top-[78px] bg-[#03101f] transition-all duration-300 lg:hidden ${
           menuOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-4 opacity-0"
@@ -143,10 +140,10 @@ export default function Header() {
                 key={item.title}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between py-4 text-lg font-semibold text-white/90 transition-colors hover:text-[#79c843]"
+                className="flex items-center justify-between py-4 text-lg font-semibold text-white/90 transition-colors hover:text-[#A3E635]"
               >
                 {item.title}
-                <span aria-hidden="true" className="text-[#79c843]">
+                <span aria-hidden="true" className="text-[#A3E635]">
                   →
                 </span>
               </Link>
@@ -157,7 +154,7 @@ export default function Header() {
             <Link
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-full border-2 border-[#69bd45] px-5 py-3 text-sm font-bold text-[#69bd45] transition-colors hover:bg-[#69bd45] hover:text-[#071b33]"
+              className="inline-flex w-full items-center justify-center rounded-full border-2 border-[#A3E635] px-5 py-3 text-sm font-bold text-[#A3E635] transition-colors hover:bg-[#A3E635] hover:text-[#03101f]"
             >
               Request a Quote
             </Link>

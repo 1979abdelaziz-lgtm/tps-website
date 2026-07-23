@@ -28,15 +28,15 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="border-t border-white/10 bg-[#041326] text-white">
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10 lg:py-14">
-        <div className="grid gap-10 lg:grid-cols-[1.35fr_.8fr_.9fr_.9fr_1.05fr] lg:gap-8">
+      <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8 sm:py-10 lg:px-10 lg:py-11">
+        <div className="grid gap-8 lg:grid-cols-[1.35fr_.8fr_.9fr_.9fr_1.05fr] lg:gap-8">
           <div className="max-w-md">
             <Link
               href="/"
               aria-label="Tetra Power Solutions home"
               className="inline-flex items-center gap-4 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400"
             >
-              <span className="relative flex h-20 w-28 shrink-0 items-center justify-center">
+              <span className="relative flex h-[88px] w-[124px] shrink-0 items-center justify-center">
                 <Image
                   src="/tps-logo-mark.png"
                   alt="TPS"
@@ -56,12 +56,12 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="mt-5 text-sm leading-7 text-slate-300">
+            <p className="mt-4 text-sm leading-6 text-slate-300">
               Integrated engineering solutions for power, automation and energy
               infrastructure—delivered with care, precision and accountability.
             </p>
 
-            <div className="mt-6 flex gap-3" aria-label="TPS social channels">
+            <div className="mt-5 flex gap-3" aria-label="TPS social channels">
               <SocialLink href="#" label="LinkedIn" icon={<LinkedInIcon className="h-5 w-5" />} />
               <SocialLink href="#" label="Facebook" icon={<FacebookIcon className="h-5 w-5" />} />
               <SocialLink href="#" label="YouTube" icon={<YouTubeIcon className="h-5 w-5" />} />
@@ -81,17 +81,10 @@ export default function Footer() {
               Share your project needs. Our team will guide your enquiry to the right
               engineering discipline.
             </p>
-            <Link
-              href="#contact"
-              className="mt-5 inline-flex items-center gap-2 rounded-full border border-lime-400/40 px-4 py-2.5 text-sm font-semibold text-lime-300 transition hover:border-lime-300 hover:bg-lime-400/10 hover:text-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400"
-            >
-              Start a conversation
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
           </div>
         </div>
 
-        <div className="mt-10 grid gap-3 border-t border-white/10 pt-8 md:grid-cols-3">
+        <div className="mt-8 grid gap-3 border-t border-white/10 pt-6 md:grid-cols-3">
           <ContactAction
             href="#contact"
             icon={<Mail className="h-5 w-5" aria-hidden="true" />}
@@ -112,7 +105,7 @@ export default function Footer() {
           />
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} Tetra Power Solutions. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <Link href="#" className="transition hover:text-slate-300">Privacy</Link>
@@ -161,9 +154,9 @@ function ContactAction({ href, icon, eyebrow, label }: ContactActionProps) {
   return (
     <Link
       href={href}
-      className="group flex min-h-24 items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.025] px-5 py-4 transition hover:border-lime-400/35 hover:bg-white/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400"
+      className="group flex min-h-20 items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.025] px-5 py-4 transition hover:border-lime-400/35 hover:bg-white/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400"
     >
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#071b33] text-lime-400">
+      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#071b33] text-lime-400">
         {icon}
       </span>
       <span className="min-w-0">
