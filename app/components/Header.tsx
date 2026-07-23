@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-[#03101f]/98 text-white backdrop-blur-xl transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 bg-[#03101f]/98 text-white backdrop-blur-xl transition-all duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#03101f] ${
         scrolled ? "shadow-[0_12px_32px_rgba(0,0,0,0.24)]" : ""
       }`}
     >
