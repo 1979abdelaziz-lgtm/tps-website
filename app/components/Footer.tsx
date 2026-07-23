@@ -22,12 +22,14 @@ const solutionLinks = [
   { label: "Power Systems", href: "#solutions" },
   { label: "Automation & Control", href: "#solutions" },
   { label: "Energy Management", href: "#solutions" },
+  { label: "Engineering Services", href: "#solutions" },
 ];
 
 const industryLinks = [
   { label: "Utilities & Energy", href: "#industries" },
   { label: "Industrial Facilities", href: "#industries" },
   { label: "Infrastructure", href: "#industries" },
+  { label: "Commercial Projects", href: "#industries" },
 ];
 
 const trustPoints = [
@@ -245,18 +247,87 @@ function LowerEnergyVisual() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-x-0 bottom-[116px] top-0 z-0 hidden overflow-hidden lg:block"
     >
-      <Image
-        src="/tps-footer-energy-background.webp"
-        alt=""
-        fill
-        sizes="(min-width: 1024px) 100vw"
-        className="object-cover object-[68%_center] opacity-[0.84]"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,#041326_0%,rgba(4,19,38,.97)_24%,rgba(4,19,38,.72)_48%,rgba(4,19,38,.28)_74%,rgba(4,19,38,.12)_100%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#041326]/74 via-[#041326]/12 to-[#041326]/92" />
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#041326] via-[#041326]/84 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#041326] via-[#041326]/76 to-transparent" />
-      <div className="absolute bottom-[8%] right-[2%] h-72 w-[48%] rounded-full bg-cyan-400/[0.06] blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_54%,rgba(34,211,238,.13),transparent_31%),radial-gradient(circle_at_63%_58%,rgba(52,211,153,.08),transparent_25%)]" />
+
+      <svg
+        viewBox="0 0 1440 620"
+        preserveAspectRatio="xMaxYMid slice"
+        className="absolute inset-0 h-full w-full"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="lower-tower-stroke" x1="760" y1="90" x2="1320" y2="590" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#7DD3FC" stopOpacity="0.12" />
+            <stop offset="0.5" stopColor="#67E8F9" stopOpacity="0.48" />
+            <stop offset="1" stopColor="#86EFAC" stopOpacity="0.16" />
+          </linearGradient>
+          <linearGradient id="lower-energy-flow" x1="560" y1="500" x2="1440" y2="170" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#38BDF8" stopOpacity="0" />
+            <stop offset="0.36" stopColor="#38BDF8" stopOpacity="0.38" />
+            <stop offset="0.74" stopColor="#22D3EE" stopOpacity="0.82" />
+            <stop offset="1" stopColor="#BEF264" stopOpacity="0.32" />
+          </linearGradient>
+          <filter id="lower-flow-glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <g stroke="url(#lower-tower-stroke)" strokeLinejoin="round" strokeWidth="1.45">
+          <g opacity="0.38">
+            <path d="M690 570L758 315L826 570M714 493H802M705 530H811M728 430H788M742 360H774" />
+            <path d="M714 493L811 530M802 493L705 530M728 430L802 493M788 430L714 493M690 570H826" />
+            <path d="M716 376L758 315L800 376M704 392H812" />
+          </g>
+          <g opacity="0.72">
+            <path d="M940 590L1042 176L1144 590M976 465H1108M962 530H1122M994 365H1090M1018 249H1066" />
+            <path d="M976 465L1122 530M1108 465L962 530M994 365L1108 465M1090 365L976 465M940 590H1144" />
+            <path d="M982 273L1042 176L1102 273M964 296H1120" />
+          </g>
+          <g opacity="0.28">
+            <path d="M1215 575L1280 325L1345 575M1238 500H1322M1229 537H1331M1250 438H1310M1265 370H1295" />
+            <path d="M1238 500L1331 537M1322 500L1229 537M1250 438L1322 500M1310 438L1238 500M1215 575H1345" />
+            <path d="M1240 383L1280 325L1320 383M1228 399H1332" />
+          </g>
+        </g>
+
+        <g stroke="#7DD3FC" strokeWidth="0.8" opacity="0.14">
+          <path d="M758 315C850 265 944 220 1042 176C1134 135 1212 175 1280 325" />
+          <path d="M758 376C866 340 950 312 1042 273C1135 234 1212 291 1280 383" />
+          <path d="M758 430C858 410 950 391 1042 365C1139 338 1210 382 1280 438" />
+          <path d="M758 493C868 485 954 478 1042 465C1135 452 1215 476 1280 500" />
+        </g>
+
+        <g stroke="url(#lower-energy-flow)" strokeLinecap="round" filter="url(#lower-flow-glow)">
+          <path d="M520 500C710 350 826 480 1000 315C1134 188 1262 284 1450 132" strokeWidth="3" opacity="0.8" />
+          <path d="M585 562C770 440 890 548 1050 405C1170 298 1300 368 1450 260" strokeWidth="1.8" opacity="0.56" />
+          <path d="M650 275C800 188 920 270 1080 150C1200 60 1320 126 1450 58" strokeWidth="1.15" opacity="0.34" />
+        </g>
+
+        <g className="motion-reduce:hidden" stroke="#ECFDF5" strokeLinecap="round" fill="none" filter="url(#lower-flow-glow)">
+          <path d="M520 500C710 350 826 480 1000 315C1134 188 1262 284 1450 132" strokeWidth="1.8" strokeDasharray="12 170" opacity="0.82">
+            <animate attributeName="stroke-dashoffset" values="182;0" dur="7s" repeatCount="indefinite" />
+          </path>
+          <path d="M585 562C770 440 890 548 1050 405C1170 298 1300 368 1450 260" strokeWidth="1.1" strokeDasharray="8 190" opacity="0.56">
+            <animate attributeName="stroke-dashoffset" values="198;0" dur="9s" repeatCount="indefinite" />
+          </path>
+        </g>
+
+        <g fill="#CFFAFE" filter="url(#lower-flow-glow)">
+          <circle cx="1000" cy="315" r="4" opacity="0.85" />
+          <circle cx="1190" cy="247" r="3.4" opacity="0.7" />
+          <circle cx="1360" cy="201" r="3" opacity="0.68" />
+        </g>
+      </svg>
+
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#041326_0%,rgba(4,19,38,.98)_25%,rgba(4,19,38,.76)_50%,rgba(4,19,38,.16)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#041326]/82 via-transparent to-[#041326]/92" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#041326] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#041326] to-transparent" />
     </div>
   );
 }
