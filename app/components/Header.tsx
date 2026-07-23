@@ -15,6 +15,7 @@ const navItems = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState("/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,6 +30,22 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    const syncActiveLink = () => {
+      const hash = window.location.hash;
+      setActiveHref(hash || "/");
+    };
+
+    syncActiveLink();
+    window.addEventListener("hashchange", syncActiveLink);
+    window.addEventListener("popstate", syncActiveLink);
+
+    return () => {
+      window.removeEventListener("hashchange", syncActiveLink);
+      window.removeEventListener("popstate", syncActiveLink);
+    };
+  }, []);
 
   return (
     <header
@@ -68,22 +85,28 @@ export default function Header() {
           aria-label="Main navigation"
           className="hidden items-center gap-3 lg:flex xl:gap-5"
         >
-          {navItems.map((item, index) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className={`group relative whitespace-nowrap py-2 text-[15px] font-semibold tracking-[0.01em] transition-colors duration-200 hover:text-[#A3E635] ${
-                index === 0 ? "text-white" : "text-white/80"
-              }`}
-            >
-              {item.title}
-              <span
-                className={`absolute inset-x-0 -bottom-1 mx-auto h-0.5 rounded-full bg-[#A3E635] transition-all duration-300 ${
-                  index === 0 ? "w-full" : "w-0 group-hover:w-full"
+          {navItems.map((item) => {
+            const isActive = activeHref === item.href;
+
+            return (
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={() => setActiveHref(item.href)}
+                aria-current={isActive ? "page" : undefined}
+                className={`group relative whitespace-nowrap py-2 text-[15px] font-semibold tracking-[0.01em] transition-colors duration-200 hover:text-[#A3E635] ${
+                  isActive ? "text-[#A3E635]" : "text-white"
                 }`}
-              />
-            </Link>
-          ))}
+              >
+                {item.title}
+                <span
+                  className={`absolute inset-x-0 -bottom-1 mx-auto h-0.5 rounded-full bg-[#A3E635] transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="relative z-50 flex items-center gap-2.5 sm:gap-3">
@@ -135,19 +158,29 @@ export default function Header() {
           className="mx-auto flex h-full max-w-md flex-col px-6 pb-10 pt-8"
         >
           <div className="flex flex-col divide-y divide-white/10 border-y border-white/10">
-            {navItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between py-4 text-lg font-semibold text-white/90 transition-colors hover:text-[#A3E635]"
-              >
-                {item.title}
-                <span aria-hidden="true" className="text-[#A3E635]">
-                  →
-                </span>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeHref === item.href;
+
+              return (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  onClick={() => {
+                    setActiveHref(item.href);
+                    setMenuOpen(false);
+                  }}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`flex items-center justify-between py-4 text-lg font-semibold transition-colors hover:text-[#A3E635] ${
+                    isActive ? "text-[#A3E635]" : "text-white"
+                  }`}
+                >
+                  {item.title}
+                  <span aria-hidden="true" className="text-[#A3E635]">
+                    →
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="mt-7">
