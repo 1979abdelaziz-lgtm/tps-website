@@ -1,14 +1,12 @@
-TPS Header — Final Image Mark
+TPS Footer V10.4 — Background Color Match
 
 Changed files:
-- app/components/Header.tsx
-- public/tps-logo-mark.png
+- app/components/Footer.tsx
+- public/tps-footer-energy-background.webp
 
-Implementation:
-- Replaced the code/generated TPS letters with the approved TPS-only image.
-- Kept TETRA POWER SOLUTIONS and INTEGRATED ENERGY SOLUTIONS beside the mark.
-- Navigation, CTA, colors, and header height were not changed.
+Changes:
+- Replaced the previous footer artwork with the clean tower-only image (no embedded text).
+- Applied a darker TPS navy color grade with restrained cyan/lime highlights.
+- Adjusted overlays so the artwork blends with the page background and keeps live text readable.
 
-Install:
-Copy the included folders into the project root and replace matching files.
-Then refresh the browser with Ctrl + F5.
+Replace the files using the same project paths.
