@@ -25,7 +25,7 @@ export default function Hero() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-px bg-[#A3E635]/60" />
 
       <Image
-        src="/images/tps-hero-neon-grid.png.png"
+        src="/images/tps-hero-neon-grid.webp"
         alt="Advanced energy infrastructure with power generation, wind energy and illuminated smart-grid lines"
         fill
         priority

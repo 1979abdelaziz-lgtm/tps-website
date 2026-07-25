@@ -82,7 +82,7 @@ export default function SolutionsPage() {
     <div className="min-h-screen bg-[#03101f] text-white">
       <section className="relative isolate min-h-[720px] overflow-hidden border-y border-[#A3E635]/60 lg:min-h-[760px]">
         <Image
-          src="/images/tps-solutions-hero.webp"
+          src="/images/tps-solutions-hero.png"
           alt="Integrated TPS energy solutions combining CHP, solar power, wind energy, battery storage, and electrical infrastructure"
           fill
           priority
@@ -92,11 +92,8 @@ export default function SolutionsPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,0.98)_0%,rgba(3,16,31,0.93)_30%,rgba(3,16,31,0.68)_52%,rgba(3,16,31,0.18)_78%,rgba(3,16,31,0.08)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.18)_0%,transparent_45%,rgba(3,16,31,0.34)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[720px] max-w-[1280px] items-center px-6 py-24 sm:px-8 lg:min-h-[760px] lg:px-12 lg:py-32">
-          <div className="max-w-3xl">
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.28em] text-[#A3E635]">
-              TPS Solutions
-            </p>
+        <div className="relative mx-auto flex min-h-[720px] max-w-[1280px] items-start px-6 pb-24 pt-16 sm:px-8 sm:pt-20 lg:min-h-[760px] lg:px-12 lg:pb-28 lg:pt-24">
+          <div className="max-w-3xl lg:-translate-x-8">
             <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
               Integrated solutions for a more reliable energy future.
             </h1>
@@ -104,19 +101,13 @@ export default function SolutionsPage() {
               TPS brings power generation, renewable energy, storage, electrical engineering,
               automation, and technical support together around the real requirements of each client.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10">
               <Link
                 href="/#contact"
                 className="inline-flex items-center justify-center rounded-full bg-[#A3E635] px-7 py-3.5 text-sm font-extrabold text-[#03101f] transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Discuss Your Requirements
               </Link>
-              <a
-                href="#solution-grid"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-bold text-white transition-colors hover:border-[#A3E635] hover:text-[#A3E635]"
-              >
-                Explore Solutions
-              </a>
             </div>
           </div>
         </div>
@@ -124,14 +115,18 @@ export default function SolutionsPage() {
 
       <section id="solution-grid" className="relative py-20 sm:py-24">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-8 lg:px-12">
-          <div className="mb-12 max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#A3E635]">
-              Our Capabilities
-            </p>
-            <h2 className="mt-4 text-3xl font-black tracking-[-0.025em] sm:text-5xl">
+          <div className="mb-12 text-center">
+            <div className="flex items-center justify-center gap-5 sm:gap-7">
+              <span className="h-px w-14 bg-[#A3E635]/80 sm:w-24" aria-hidden="true" />
+              <h2 className="text-sm font-extrabold uppercase tracking-[0.24em] text-[#A3E635] sm:text-base">
+                Our Core Solutions
+              </h2>
+              <span className="h-px w-14 bg-[#A3E635]/80 sm:w-24" aria-hidden="true" />
+            </div>
+            <p className="mx-auto mt-5 max-w-3xl text-3xl font-black tracking-[-0.025em] sm:text-5xl">
               One engineering partner across the energy system.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-white/65">
+            </p>
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
               Each solution is presented honestly and clearly, without invented project numbers or
               unsupported claims. The focus is on what TPS is prepared to engineer and support.
             </p>
@@ -182,7 +177,7 @@ export default function SolutionsPage() {
             href="/#contact"
             className="inline-flex shrink-0 items-center justify-center rounded-full border-2 border-[#A3E635] px-7 py-3.5 text-sm font-extrabold text-[#A3E635] transition-colors hover:bg-[#A3E635] hover:text-[#03101f]"
           >
-            Request a Quote
+            Let's Build the Right Solution
           </Link>
         </div>
       </section>
