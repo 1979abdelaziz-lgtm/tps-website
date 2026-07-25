@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "TPS | Tetra Power Solutions",
   description:
-    "Integrated Energy Engineering Solutions | Power Generation | Solar Energy | CHP | BESS | Electrical Engineering",
+    "Integrated Energy Solutions | Power Generation | Solar Energy | CHP | BESS | Electrical Engineering",
 };
 
 export default function RootLayout({

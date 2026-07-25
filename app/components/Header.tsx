@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-[#03101f]/98 text-white backdrop-blur-xl transition-all duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#03101f] ${
+      className={`fixed inset-x-0 top-0 z-50 bg-[#03101f]/98 text-white backdrop-blur-xl transition-all duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-px after:h-[2px] after:bg-[#03101f] ${
         scrolled ? "shadow-[0_12px_32px_rgba(0,0,0,0.24)]" : ""
       }`}
     >
@@ -65,12 +65,7 @@ export default function Header() {
             alt="TPS"
             className="h-[44px] w-auto shrink-0 object-contain sm:h-[48px] lg:h-[51px]"
           />
-
-          <span
-            aria-hidden="true"
-            className="hidden h-9 w-px shrink-0 bg-white/30 sm:block"
-          />
-
+          <span aria-hidden="true" className="hidden h-9 w-px shrink-0 bg-white/30 sm:block" />
           <span className="hidden min-w-0 flex-col justify-center leading-none sm:flex">
             <span className="whitespace-nowrap text-[13px] font-extrabold tracking-[0.025em] text-white lg:text-[14px] xl:text-[15px]">
               TETRA <span className="text-[#A3E635]">POWER</span> SOLUTIONS
@@ -81,13 +76,9 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav
-          aria-label="Main navigation"
-          className="hidden items-center gap-3 lg:flex xl:gap-5"
-        >
+        <nav aria-label="Main navigation" className="hidden items-center gap-3 lg:flex xl:gap-5">
           {navItems.map((item) => {
             const isActive = activeHref === item.href;
-
             return (
               <Link
                 key={item.title}
@@ -126,21 +117,9 @@ export default function Header() {
           >
             <span className="sr-only">Toggle navigation</span>
             <span className="relative block h-5 w-5">
-              <span
-                className={`absolute left-0 top-1 block h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${
-                  menuOpen ? "translate-y-1.5 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-2.5 block h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${
-                  menuOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-4 block h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${
-                  menuOpen ? "-translate-y-1.5 -rotate-45" : ""
-                }`}
-              />
+              <span className={`absolute left-0 top-1 block h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${menuOpen ? "translate-y-1.5 rotate-45" : ""}`} />
+              <span className={`absolute left-0 top-2.5 block h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`absolute left-0 top-4 block h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${menuOpen ? "-translate-y-1.5 -rotate-45" : ""}`} />
             </span>
           </button>
         </div>
@@ -153,14 +132,10 @@ export default function Header() {
             : "pointer-events-none -translate-y-4 opacity-0"
         }`}
       >
-        <nav
-          aria-label="Mobile navigation"
-          className="mx-auto flex h-full max-w-md flex-col px-6 pb-10 pt-8"
-        >
+        <nav aria-label="Mobile navigation" className="mx-auto flex h-full max-w-md flex-col px-6 pb-10 pt-8">
           <div className="flex flex-col divide-y divide-white/10 border-y border-white/10">
             {navItems.map((item) => {
               const isActive = activeHref === item.href;
-
               return (
                 <Link
                   key={item.title}
@@ -175,9 +150,7 @@ export default function Header() {
                   }`}
                 >
                   {item.title}
-                  <span aria-hidden="true" className="text-[#A3E635]">
-                    →
-                  </span>
+                  <span aria-hidden="true" className="text-[#A3E635]">→</span>
                 </Link>
               );
             })}

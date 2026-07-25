@@ -2,71 +2,46 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  BadgeCheck,
-  Globe2,
+  Handshake,
+  Leaf,
   ShieldCheck,
-  Users,
+  Wrench,
 } from "lucide-react";
 
 const trustItems = [
-  {
-    icon: BadgeCheck,
-    value: "24+",
-    label: "Years Experience",
-  },
-  {
-    icon: ShieldCheck,
-    value: "Reliable",
-    label: "Engineering Solutions",
-  },
-  {
-    icon: Users,
-    value: "Expert",
-    label: "Multidisciplinary Team",
-  },
-  {
-    icon: Globe2,
-    value: "Global",
-    label: "Energy Vision",
-  },
+  { icon: ShieldCheck, title: "Reliable Engineering" },
+  { icon: Handshake, title: "Customer First" },
+  { icon: Leaf, title: "Sustainable Solutions" },
+  { icon: Wrench, title: "End-to-End Support" },
 ];
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate min-h-[calc(100svh-72px)] overflow-hidden bg-[#03101f] text-white"
+      className="relative isolate -mt-px min-h-[calc(100svh-72px)] overflow-hidden border-0 bg-[#03101f] text-white"
     >
       <Image
-        src="/tps-hero-energy.webp"
-        alt="TPS engineer overlooking integrated power generation, solar, wind and energy storage systems"
+        src="/images/tps-hero-neon-grid.png.png"
+        alt="Advanced energy infrastructure with power generation, wind energy and illuminated smart-grid lines"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[68%_center]"
+        className="object-cover object-[70%_center]"
       />
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(90deg,#03101f_0%,rgba(3,16,31,.98)_30%,rgba(3,16,31,.76)_52%,rgba(3,16,31,.18)_76%,rgba(3,16,31,.08)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(90deg,#03101f_0%,rgba(3,16,31,.88)_31%,rgba(3,16,31,.70)_50%,rgba(3,16,31,.20)_74%,rgba(3,16,31,.06)_100%)]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,.16)_0%,transparent_42%,rgba(3,16,31,.72)_100%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-y-0 left-0 w-[58%] bg-[radial-gradient(circle_at_20%_28%,rgba(163,230,53,.10),transparent_35%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,.08)_0%,transparent_42%,rgba(3,16,31,.72)_100%)]"
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-[1440px] flex-col justify-center px-5 pb-8 pt-24 sm:px-7 lg:px-10 lg:pb-10 lg:pt-20 xl:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-[1440px] flex-col justify-center px-5 pb-8 pt-20 sm:px-7 lg:px-10 lg:pb-10 lg:pt-16 xl:px-12">
         <div className="max-w-[670px]">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#A3E635]/35 bg-[#A3E635]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#C7F36A] backdrop-blur-sm">
-            <span className="h-2 w-2 rounded-full bg-[#A3E635] shadow-[0_0_14px_rgba(163,230,53,.75)]" />
-            Integrated Energy Solutions
-          </div>
-
-          <h1 className="mt-6 max-w-[650px] text-balance text-[42px] font-extrabold uppercase leading-[0.98] tracking-[-0.045em] sm:text-[58px] lg:text-[66px] xl:text-[74px]">
+          <h1 className="max-w-[650px] text-balance text-[42px] font-extrabold uppercase leading-[0.98] tracking-[-0.045em] sm:text-[58px] lg:text-[66px] xl:text-[74px]">
             Engineering reliable
             <span className="mt-2 block text-[#8FD246]">energy solutions</span>
           </h1>
@@ -83,10 +58,7 @@ export default function Hero() {
               className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#74C043] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_34px_rgba(116,192,67,.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#86D64F] hover:shadow-[0_18px_38px_rgba(116,192,67,.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
             >
               Explore solutions
-              <ArrowUpRight
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                aria-hidden="true"
-              />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </Link>
 
             <Link
@@ -94,32 +66,24 @@ export default function Hero() {
               className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#03101f]/25 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#A3E635] hover:bg-white/[0.06] hover:text-[#C7F36A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
             >
               Contact us
-              <ArrowUpRight
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                aria-hidden="true"
-              />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 grid max-w-[840px] grid-cols-2 gap-3 border-t border-white/15 pt-5 sm:grid-cols-4 sm:gap-0 lg:mt-14">
-          {trustItems.map(({ icon: Icon, value, label }, index) => (
+        <div className="mt-12 grid max-w-[900px] grid-cols-2 gap-x-5 gap-y-4 border-t border-white/15 pt-6 sm:grid-cols-4 sm:gap-0 lg:mt-14">
+          {trustItems.map(({ icon: Icon, title }, index) => (
             <div
-              key={label}
-              className={`flex min-w-0 items-center gap-3 py-2 sm:px-4 ${
+              key={title}
+              className={`group flex min-w-0 items-center gap-3 py-2 sm:px-5 ${
                 index === 0 ? "sm:pl-0" : "sm:border-l sm:border-white/20"
               }`}
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#A3E635]/65 bg-[#03101f]/45 text-[#B8EC5A] backdrop-blur-sm">
-                <Icon className="h-5 w-5" aria-hidden="true" />
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center text-[#A3E635] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:text-[#C7F36A]">
+                <Icon className="h-7 w-7" strokeWidth={1.7} aria-hidden="true" />
               </span>
-              <span className="min-w-0">
-                <span className="block text-base font-bold leading-tight text-white">
-                  {value}
-                </span>
-                <span className="mt-1 block text-[11px] leading-4 text-slate-300">
-                  {label}
-                </span>
+              <span className="text-sm font-semibold leading-5 text-white sm:text-[13px] lg:text-sm">
+                {title}
               </span>
             </div>
           ))}
