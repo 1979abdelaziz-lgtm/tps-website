@@ -1,10 +1,10 @@
-TPS Footer ghost-text fix
+TPS Hero V1
 
-Changed file:
-- app/components/Footer.tsx
+Changed files:
+- app/components/Hero.tsx
+- public/tps-hero-energy.webp
 
-Changes:
-- Added an opaque isolated background layer behind the footer text columns.
-- Prevented background visual compositing/filter bleed into the text area.
-- Removed backdrop blur from lower footer cards to avoid Chrome rendering artifacts.
-- No project files outside the footer were changed.
+Integration:
+Import Hero from "./components/Hero" (or the matching relative path) and place <Hero /> directly below <Header />.
+
+No other project files are changed.
