@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
 
 import Header from "./components/Header";
@@ -17,13 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 antialiased">
+      <body className="bg-[#03101f] text-slate-900 antialiased">
         <Header />
-
-        <main className="pt-20">
-          {children}
-        </main>
-
+        <main className="bg-[#03101f] pt-20">{children}</main>
         <Footer />
       </body>
     </html>

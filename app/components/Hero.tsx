@@ -19,8 +19,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate -mt-px min-h-[calc(100svh-72px)] overflow-hidden border-0 bg-[#03101f] text-white"
+      className="relative isolate min-h-[calc(100svh-72px)] overflow-hidden border-0 bg-[#03101f] text-white"
     >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-20 h-px bg-[#A3E635]/60" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-px bg-[#A3E635]/60" />
+
       <Image
         src="/images/tps-hero-neon-grid.png.png"
         alt="Advanced energy infrastructure with power generation, wind energy and illuminated smart-grid lines"

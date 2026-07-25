@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
   { title: "Home", href: "/" },
-  { title: "Solutions", href: "#solutions" },
+  { title: "Solutions", href: "/solutions" },
   { title: "Industries", href: "#industries" },
   { title: "Projects", href: "#projects" },
   { title: "About", href: "#about" },
@@ -13,6 +14,7 @@ const navItems = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("/");
@@ -34,7 +36,7 @@ export default function Header() {
   useEffect(() => {
     const syncActiveLink = () => {
       const hash = window.location.hash;
-      setActiveHref(hash || "/");
+      setActiveHref(hash || pathname || "/");
     };
 
     syncActiveLink();
@@ -45,7 +47,7 @@ export default function Header() {
       window.removeEventListener("hashchange", syncActiveLink);
       window.removeEventListener("popstate", syncActiveLink);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <header
