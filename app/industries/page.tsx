@@ -115,13 +115,10 @@ export default function IndustriesPage() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.14)_0%,transparent_48%,rgba(3,16,31,0.58)_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-[radial-gradient(ellipse_at_bottom,rgba(163,230,53,0.15),transparent_66%)]" />
 
-        <div className="relative mx-auto flex min-h-[590px] max-w-[1280px] items-center px-6 py-20 sm:min-h-[640px] sm:px-8 lg:px-12">
-          <div className="max-w-3xl">
-            <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.24em] text-[#A3E635]">
-              Industries
-            </p>
-            <h1 className="text-4xl font-black leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
-              Engineering Energy Solutions for Critical Industries
+        <div className="relative mx-auto flex min-h-[590px] max-w-[1280px] items-start px-6 pb-20 pt-16 sm:min-h-[640px] sm:px-8 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
+          <div className="max-w-3xl lg:-translate-x-8">
+            <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+              Engineering Energy Solutions for Critical Industry
             </h1>
             <div className="mt-7 h-1 w-24 rounded-full bg-[#A3E635]" />
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
