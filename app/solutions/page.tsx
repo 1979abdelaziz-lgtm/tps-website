@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowRight,
   BatteryCharging,
-  Cog,
   Cpu,
   Factory,
   Gauge,
@@ -15,16 +15,22 @@ import {
 export const metadata: Metadata = {
   title: "Energy Solutions | TPS",
   description:
-    "Explore TPS integrated energy solutions across power generation, CHP and CCHP, solar energy, battery storage, electrical engineering, automation, energy management, and operation and maintenance.",
+    "Explore TPS integrated energy solutions across power generation, CHP and CCHP, solar energy, battery storage, electrical power systems, industrial automation, operation and maintenance, and energy management.",
 };
 
 const solutions = [
   {
-    icon: Cog,
+    icon: Zap,
     title: "Power Generation",
     description:
-      "Engineering support for gas engines, diesel generators, hybrid plants, commissioning, troubleshooting, and reliable power delivery.",
-    capabilities: ["Gas and diesel generation", "Hybrid power plants", "Commissioning and troubleshooting"],
+      "Engineering support for gas generators, diesel generators, hybrid plants, commissioning, troubleshooting, and reliable power delivery.",
+    capabilities: [
+      "Gas and diesel generation",
+      "Hybrid power plants",
+      "Commissioning and troubleshooting",
+    ],
+    image: "/images/solutions/power-generation.png",
+    imagePosition: "center",
   },
   {
     icon: Factory,
@@ -32,34 +38,65 @@ const solutions = [
     description:
       "Combined heat and power solutions designed to increase fuel utilisation and support demanding industrial energy needs.",
     capabilities: ["Cogeneration", "Trigeneration", "Waste heat recovery"],
+    image: "/images/solutions/chp-cchp.jpg",
+    imagePosition: "center",
   },
   {
     icon: Sun,
     title: "Solar Energy",
     description:
       "Practical solar solutions for commercial, industrial, rooftop, and hybrid applications, engineered around each site.",
-    capabilities: ["Commercial and industrial solar", "Rooftop systems", "Solar hybrid integration"],
+    capabilities: [
+      "Commercial and industrial solar",
+      "Rooftop systems",
+      "Solar hybrid integration",
+    ],
+    image: "/images/solutions/solar-energy.jpg",
+    imagePosition: "center",
   },
   {
     icon: BatteryCharging,
-    title: "Battery Energy Storage",
+    title: "Battery Energy Storage Systems (BESS)",
     description:
       "BESS integration for backup power, peak management, renewable energy support, and improved system resilience.",
     capabilities: ["Backup power", "Peak shaving", "Renewable energy integration"],
+    image: "/images/solutions/bess.png",
+    imagePosition: "center",
   },
   {
     icon: Zap,
-    title: "Electrical Engineering",
+    title: "Electrical Power Systems",
     description:
       "LV and MV engineering covering distribution, protection, control interfaces, and power-quality requirements.",
-    capabilities: ["LV and MV distribution", "Protection and coordination", "Power quality"],
+    capabilities: [
+      "LV and MV distribution",
+      "Protection and coordination",
+      "Power quality",
+    ],
+    image: "/images/solutions/electrical-power-systems.png",
+    imagePosition: "center",
   },
   {
     icon: Cpu,
-    title: "Automation & SCADA",
+    title: "Industrial Automation",
     description:
       "Industrial automation solutions that connect equipment, operators, and data through dependable control architecture.",
     capabilities: ["PLC systems", "SCADA and HMI", "Industrial communication"],
+    image: "/images/solutions/industrial-automation.jpg",
+    imagePosition: "center",
+  },
+  {
+    icon: Wrench,
+    title: "Operation & Maintenance",
+    description:
+      "Structured technical support focused on availability, safe operation, preventive care, and rapid fault response.",
+    capabilities: [
+      "Preventive maintenance",
+      "Corrective maintenance",
+      "Technical support",
+    ],
+    image: "/images/solutions/operation-maintenance.jpg",
+    imagePosition: "center",
   },
   {
     icon: Gauge,
@@ -67,95 +104,95 @@ const solutions = [
     description:
       "Monitoring and optimisation tools that improve visibility, support decisions, and reduce avoidable energy losses.",
     capabilities: ["Energy monitoring", "Smart metering", "Performance optimisation"],
-  },
-  {
-    icon: Wrench,
-    title: "Operation & Maintenance",
-    description:
-      "Structured technical support focused on availability, safe operation, preventive care, and rapid fault response.",
-    capabilities: ["Preventive maintenance", "Corrective maintenance", "Technical support"],
+    image: "/images/solutions/energy-management.jpg",
+    imagePosition: "center",
   },
 ];
 
 export default function SolutionsPage() {
   return (
-    <div className="min-h-screen bg-[#03101f] text-white">
-      <section className="relative isolate min-h-[720px] overflow-hidden border-y border-[#A3E635]/60 lg:min-h-[760px]">
+    <main className="min-h-screen bg-[#f6f8f7] text-[#071a24]">
+      <section className="relative isolate min-h-[590px] overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white sm:min-h-[640px]">
         <Image
           src="/images/tps-solutions-hero.png"
-          alt="Integrated TPS energy solutions combining CHP, solar power, wind energy, battery storage, and electrical infrastructure"
+          alt="Integrated TPS energy solutions combining power generation, renewable energy, battery storage, and electrical infrastructure"
           fill
           priority
           sizes="100vw"
           className="object-cover object-[68%_center] sm:object-[66%_center] lg:object-right"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,0.98)_0%,rgba(3,16,31,0.93)_30%,rgba(3,16,31,0.68)_52%,rgba(3,16,31,0.18)_78%,rgba(3,16,31,0.08)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.18)_0%,transparent_45%,rgba(3,16,31,0.34)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,0.98)_0%,rgba(3,16,31,0.91)_38%,rgba(3,16,31,0.55)_64%,rgba(3,16,31,0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.14)_0%,transparent_48%,rgba(3,16,31,0.58)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[720px] max-w-[1280px] items-start px-6 pb-24 pt-16 sm:px-8 sm:pt-20 lg:min-h-[760px] lg:px-12 lg:pb-28 lg:pt-24">
+        <div className="relative mx-auto flex min-h-[590px] max-w-[1280px] items-start px-6 pb-20 pt-16 sm:min-h-[640px] sm:px-8 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
           <div className="max-w-3xl lg:-translate-x-8">
             <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
               Integrated solutions for a more reliable energy future.
             </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl">
-              TPS brings power generation, renewable energy, storage, electrical engineering,
-              automation, and technical support together around the real requirements of each client.
+            <div className="mt-7 h-1 w-24 rounded-full bg-[#A3E635]" />
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
+              From power generation to intelligent energy management, TPS delivers integrated engineering solutions across the complete energy lifecycle.
             </p>
-            <div className="mt-10">
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#A3E635] px-7 py-3.5 text-sm font-extrabold text-[#03101f] transition-transform duration-200 hover:-translate-y-0.5"
-              >
-                Discuss Your Requirements
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="solution-grid" className="relative py-20 sm:py-24">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-8 lg:px-12">
-          <div className="mb-12 text-center">
+      <section className="py-0">
+        <div className="mx-auto max-w-[1280px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
             <div className="flex items-center justify-center gap-5 sm:gap-7">
-              <span className="h-px w-14 bg-[#A3E635]/80 sm:w-24" aria-hidden="true" />
-              <h2 className="text-sm font-extrabold uppercase tracking-[0.24em] text-[#A3E635] sm:text-base">
+              <span className="h-px w-14 bg-[#16803b]/70 sm:w-24" aria-hidden="true" />
+              <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-[#16803b]">
                 Our Core Solutions
-              </h2>
-              <span className="h-px w-14 bg-[#A3E635]/80 sm:w-24" aria-hidden="true" />
+              </p>
+              <span className="h-px w-14 bg-[#16803b]/70 sm:w-24" aria-hidden="true" />
             </div>
-            <p className="mx-auto mt-5 max-w-3xl text-3xl font-black tracking-[-0.025em] sm:text-5xl">
-              One engineering partner across the energy system.
-            </p>
-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
-              Each solution is presented honestly and clearly, without invented project numbers or
-              unsupported claims. The focus is on what TPS is prepared to engineer and support.
+            <h2 className="mt-5 text-3xl font-black tracking-[-0.03em] sm:text-5xl">
+              Engineering Every Stage of Your Energy Journey
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#334853]">
+              Every solution is presented clearly and honestly, focused on what TPS is prepared to engineer, integrate, and support.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {solutions.map((solution) => {
               const Icon = solution.icon;
               return (
                 <article
                   key={solution.title}
-                  className="group relative flex min-h-[360px] flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.045] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#A3E635]/70 hover:bg-white/[0.07] hover:shadow-[0_18px_55px_rgba(163,230,53,0.10)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[#0a2b20]/10 bg-white shadow-[0_12px_38px_rgba(6,30,22,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-[#16803b]/40 hover:shadow-[0_22px_58px_rgba(6,85,45,0.16)]"
                 >
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#A3E635] transition-transform duration-300 group-hover:scale-x-100" />
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#A3E635]/45 bg-[#A3E635]/[0.08] text-[#A3E635] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-[#A3E635] group-hover:text-[#03101f]">
-                    <Icon size={27} strokeWidth={1.8} />
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={solution.image}
+                      alt={solution.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      style={{ objectPosition: solution.imagePosition }}
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(2,18,13,0.36)_100%)]" />
+                    <div className="absolute inset-0 bg-[#16803b]/0 transition-colors duration-300 group-hover:bg-[#16803b]/14" />
                   </div>
-                  <h3 className="mt-7 text-2xl font-extrabold tracking-[-0.02em]">
-                    {solution.title}
-                  </h3>
-                  <p className="mt-4 leading-7 text-white/65">{solution.description}</p>
-                  <ul className="mt-6 space-y-3 border-t border-white/10 pt-5 text-sm text-white/75">
-                    {solution.capabilities.map((capability) => (
-                      <li key={capability} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#A3E635]" />
-                        <span>{capability}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="relative flex flex-1 flex-col p-6">
+                    <div className="absolute -top-7 left-6 flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-white bg-[#13763a] text-white shadow-lg transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3">
+                      <Icon size={25} strokeWidth={1.9} />
+                    </div>
+                    <h3 className="mt-6 text-xl font-extrabold tracking-[-0.02em]">
+                      {solution.title}
+                    </h3>
+                    <p className="mt-3 leading-6 text-[#4f6169]">{solution.description}</p>
+                    <ul className="mt-5 space-y-2.5 border-t border-[#0a2b20]/10 pt-5 text-sm text-[#334853]">
+                      {solution.capabilities.map((capability) => (
+                        <li key={capability} className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#58a832]" />
+                          <span>{capability}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-[#A3E635] transition-transform duration-300 group-hover:scale-x-100" />
                 </article>
               );
             })}
@@ -163,24 +200,28 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#A3E635]/60 bg-[#071b33]">
-        <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-7 px-6 py-14 sm:px-8 lg:flex-row lg:items-center lg:px-12">
+      <section className="border-y border-[#16803b]/18 bg-[linear-gradient(90deg,#edf8f0_0%,#f7fbf8_55%,#edf8f0_100%)]">
+        <div className="mx-auto flex max-w-[1080px] flex-col items-start justify-between gap-7 px-6 py-9 sm:px-8 sm:py-10 lg:flex-row lg:items-center lg:px-10">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#A3E635]">
+            <p className="text-sm font-extrabold uppercase tracking-[0.22em] text-[#16803b]">
               Start With The Requirement
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.025em] sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.025em] text-[#071a24] sm:text-4xl">
               Tell us what your energy system needs to achieve.
             </h2>
+            <p className="mt-3 text-[#4f6169]">
+              Start with the challenge, the required outcome, and the conditions your system must meet.
+            </p>
           </div>
           <Link
             href="/#contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-full border-2 border-[#A3E635] px-7 py-3.5 text-sm font-extrabold text-[#A3E635] transition-colors hover:bg-[#A3E635] hover:text-[#03101f]"
+            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330]"
           >
-            Let's Build the Right Solution
+            Talk to Our Engineers
+            <ArrowRight size={17} />
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
