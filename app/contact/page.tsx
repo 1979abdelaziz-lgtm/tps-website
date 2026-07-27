@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 const contactItems = [
   {
     title: "Email",
-    value: "info@tetrapowersolutions.com",
-    href: "mailto:info@tetrapowersolutions.com",
+    value: "info@tetraeg.com",
+    href: "mailto:info@tetraeg.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
@@ -22,8 +22,8 @@ const contactItems = [
   },
   {
     title: "Phone",
-    value: "+20 000 000 0000",
-    href: "tel:+200000000000",
+    value: "+20 1500 999 409",
+    href: "tel:+201500999409",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
@@ -36,7 +36,7 @@ const contactItems = [
   {
     title: "Location",
     value: "Cairo, Egypt",
-    href: "#location",
+    href: "#",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
@@ -46,6 +46,7 @@ const contactItems = [
       </svg>
     ),
   },
+
   {
     title: "Business Hours",
     value: "Sunday – Thursday, 9:00 AM – 5:00 PM",
@@ -247,30 +248,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section id="location" className="bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-8 max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-600">
-              Our location
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Based in Cairo. Ready to support projects across the region.
-            </h2>
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
-            <iframe
-              title="TPS location in Cairo, Egypt"
-              src="https://www.google.com/maps?q=Cairo%2C%20Egypt&output=embed"
-              width="100%"
-              height="440"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="block w-full"
-            />
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
