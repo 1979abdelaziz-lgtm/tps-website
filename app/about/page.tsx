@@ -84,7 +84,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-[#f6f8f7] text-[#071a24]">
       <section className="relative isolate min-h-[590px] overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white sm:min-h-[640px]">
         <Image
-          src="/images/about-hero.webp"
+          src="/images/about-hero-v3.webp"
           alt="Integrated energy infrastructure representing the engineering vision of Tetra Power Solutions"
           fill
           priority
