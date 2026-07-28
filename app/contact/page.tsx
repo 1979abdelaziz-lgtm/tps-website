@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 const contactItems = [
   {
     title: "Email",
-    value: "info@tetraeg.com",
-    href: "mailto:info@tetraeg.com",
+    value: "info@tetrapowersolutions.com",
+    href: "mailto:info@tetrapowersolutions.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
@@ -22,8 +22,8 @@ const contactItems = [
   },
   {
     title: "Phone",
-    value: "+20 1500 999 409",
-    href: "tel:+201500999409",
+    value: "+20 000 000 0000",
+    href: "tel:+200000000000",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
@@ -65,7 +65,7 @@ const contactItems = [
 export default function ContactPage() {
   return (
     <div className="bg-white text-slate-900">
-      <section className="relative isolate min-h-[520px] overflow-hidden border-b-4 border-emerald-500">
+      <section className="relative isolate min-h-[calc(100vh-96px)] overflow-hidden border-b-4 border-emerald-500">
         <div
           className="absolute inset-0 bg-cover bg-[65%_center] lg:bg-[70%_center]"
           style={{ backgroundImage: "url('/images/contact-hero.png')" }}
@@ -73,12 +73,13 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-slate-950/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/82 via-slate-950/48 to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[520px] max-w-7xl items-center px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+        <div className="relative mx-auto flex min-h-[calc(100vh-96px)] max-w-[1280px] items-start px-6 pb-20 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
+          <div className="max-w-3xl lg:-translate-x-8">
+            <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] text-white sm:text-6xl lg:text-7xl">
               Let&apos;s Build Your Next Energy Project Together
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
+            <div className="mt-7 h-1 w-24 rounded-full bg-[#A3E635]" />
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
               Tell us about your technical requirements, operational goals, or
               upcoming project. Our engineering team will review your enquiry
               and respond with the right next step.
