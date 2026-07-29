@@ -42,14 +42,14 @@ export default function Hero() {
         className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,.08)_0%,transparent_42%,rgba(3,16,31,.72)_100%)]"
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-[1440px] flex-col justify-center px-5 pb-8 pt-20 sm:px-7 lg:px-10 lg:pb-10 lg:pt-16 xl:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-72px)] max-w-[1440px] flex-col justify-center px-5 pb-8 pt-24 sm:px-7 lg:px-10 lg:pb-10 lg:pt-20 xl:px-12">
         <div className="max-w-[670px]">
           <h1 className="max-w-[650px] text-balance text-[42px] font-extrabold uppercase leading-[0.98] tracking-[-0.045em] sm:text-[58px] lg:text-[66px] xl:text-[74px]">
             Engineering reliable
             <span className="mt-2 block text-[#8FD246]">energy solutions</span>
           </h1>
 
-          <p className="mt-6 max-w-[620px] text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-[580px] text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
             TPS delivers integrated engineering solutions for power generation, CHP,
             renewable energy, electrical systems, industrial automation, operation and
             maintenance.
@@ -66,7 +66,7 @@ export default function Hero() {
 
             <Link
               href="/contact"
-              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#03101f]/25 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#A3E635] hover:bg-white/[0.06] hover:text-[#C7F36A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#03101f]/25 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#A3E635] hover:bg-white/[0.06] hover:text-[#C7F36A] hover:shadow-[0_12px_28px_rgba(163,230,53,.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
             >
               Contact us
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />

@@ -53,10 +53,10 @@ export default function Header() {
           />
 
           <span className="hidden min-w-0 flex-col justify-center leading-none sm:flex">
-            <span className="whitespace-nowrap text-[13px] font-extrabold tracking-[0.025em] text-white lg:text-[14px] xl:text-[16px]">
+            <span className="whitespace-nowrap text-[14px] font-extrabold tracking-[0.025em] text-white lg:text-[15px] xl:text-[17px]">
               TETRA <span className="text-[#A3E635]">POWER</span> SOLUTIONS
             </span>
-            <span className="mt-1 whitespace-nowrap text-[9px] font-semibold tracking-[0.04em] text-[#A3E635] lg:text-[10px] xl:text-[11px]">
+            <span className="mt-2 whitespace-nowrap text-[10px] font-semibold tracking-[0.04em] text-[#A3E635] lg:text-[11px] xl:text-[12px]">
               INTEGRATED ENERGY SOLUTIONS
             </span>
           </span>
