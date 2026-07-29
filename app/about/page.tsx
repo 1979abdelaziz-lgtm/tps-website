@@ -163,7 +163,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section>
+      <section id="values">
         <div className="mx-auto max-w-[1280px] px-6 py-16 sm:px-8 sm:py-20 lg:px-12">
           <div className="mx-auto mb-11 max-w-3xl text-center">
             <div className="flex items-center justify-center gap-5 sm:gap-7">

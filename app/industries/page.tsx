@@ -1,106 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Building2,
-  Database,
-  Droplets,
-  Factory,
-  HeartPulse,
-  Flame,
-  SunMedium,
-  TowerControl,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { industries } from "@/app/data/industries";
 
 export const metadata: Metadata = {
   title: "Industries | TPS",
   description:
     "Explore how TPS delivers integrated energy engineering solutions for manufacturing, oil and gas, water, healthcare, data centres, commercial buildings, renewable energy, utilities, and infrastructure.",
 };
-
-const industries = [
-  {
-    icon: Factory,
-    title: "Manufacturing",
-    challenge: "Maximum Uptime",
-    description:
-      "Reliable, efficient energy systems that keep production running, reduce avoidable losses, and support smarter operations.",
-    image:
-      "/images/manufacturing.jpg",
-    imagePosition: "center 48%",
-  },
-  {
-    icon: Flame,
-    title: "Oil & Gas",
-    challenge: "Harsh Environments",
-    description:
-      "Robust power, electrical, and automation solutions engineered for demanding operating conditions and critical processes.",
-    image:
-      "/images/oil-gas.jpg",
-    imagePosition: "center 52%",
-  },
-  {
-    icon: Droplets,
-    title: "Water & Wastewater",
-    challenge: "Process Continuity",
-    description:
-      "Efficient, resilient systems that support reliable pumping, treatment, control, and continuous water operations.",
-    image:
-      "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1400&q=85",
-    imagePosition: "center",
-  },
-  {
-    icon: HeartPulse,
-    title: "Healthcare",
-    challenge: "Critical Reliability",
-    description:
-      "Dependable power solutions designed to protect essential medical services, sensitive equipment, and patient care.",
-    image:
-      "/images/healthcare.jpg",
-    imagePosition: "center 54%",
-  },
-  {
-    icon: Database,
-    title: "Data Centres",
-    challenge: "24/7 Availability",
-    description:
-      "High-availability power architecture that supports uptime, resilience, scalability, and efficient digital infrastructure.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=90",
-    imagePosition: "center",
-    imageClassName: "brightness-[1.28] saturate-[0.9]",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Buildings",
-    challenge: "Operational Efficiency",
-    description:
-      "Integrated energy and control systems that improve comfort, reduce consumption, and strengthen building performance.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85",
-    imagePosition: "center",
-  },
-  {
-    icon: SunMedium,
-    title: "Renewable Energy",
-    challenge: "Grid Integration",
-    description:
-      "Solar, storage, and energy-management solutions that support cleaner generation and stable system integration.",
-    image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85",
-    imagePosition: "center",
-  },
-  {
-    icon: TowerControl,
-    title: "Utilities & Infrastructure",
-    challenge: "System Resilience",
-    description:
-      "Scalable engineering solutions that strengthen essential networks, public infrastructure, and power communities.",
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=85",
-    imagePosition: "center",
-  },
-];
 
 export default function IndustriesPage() {
   return (
@@ -202,7 +109,7 @@ export default function IndustriesPage() {
             </p>
           </div>
           <Link
-            href="/#contact"
+            href="/contact"
             className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330]"
           >
             Talk to Our Engineers

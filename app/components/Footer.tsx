@@ -1,27 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ChevronRight, Mail, MapPin, Phone } from "lucide-react";
-
-const companyLinks = [
-  { label: "About TPS", href: "#about" },
-  { label: "Our Values", href: "#values" },
-  { label: "Projects", href: "#projects" },
-  { label: "Knowledge Center", href: "#knowledge" },
-];
-
-const solutionLinks = [
-  { label: "Power Systems", href: "#solutions" },
-  { label: "Automation & Control", href: "#solutions" },
-  { label: "Energy Management", href: "#solutions" },
-  { label: "Engineering Services", href: "#solutions" },
-];
-
-const industryLinks = [
-  { label: "Utilities & Energy", href: "#industries" },
-  { label: "Industrial Facilities", href: "#industries" },
-  { label: "Infrastructure", href: "#industries" },
-  { label: "Commercial Projects", href: "#industries" },
-];
+import {
+  companyLinks,
+  contactActionLinks,
+  footerIndustryLinks,
+  footerSolutionLinks,
+  legalLinks,
+  socialLinks,
+} from "@/app/data/navigation";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -62,16 +49,20 @@ export default function Footer() {
             </p>
 
             <div className="mt-5 flex gap-3" aria-label="TPS social channels">
-              <SocialLink href="#" label="LinkedIn" icon={<LinkedInIcon className="h-5 w-5" />} />
-              <SocialLink href="#" label="Facebook" icon={<FacebookIcon className="h-5 w-5" />} />
-              <SocialLink href="#" label="YouTube" icon={<YouTubeIcon className="h-5 w-5" />} />
-              <SocialLink href="mailto:info@tetrapowersolutions.com" label="Email TPS" icon={<Mail className="h-5 w-5" aria-hidden="true" />} />
+              {socialLinks.map((link) => (
+                <SocialLink
+                  key={link.label}
+                  href={link.href}
+                  label={link.label}
+                  icon={socialIcons[link.label]}
+                />
+              ))}
             </div>
           </div>
 
           <FooterLinkColumn title="Company" links={companyLinks} />
-          <FooterLinkColumn title="Solutions" links={solutionLinks} />
-          <FooterLinkColumn title="Industries" links={industryLinks} />
+          <FooterLinkColumn title="Solutions" links={footerSolutionLinks} />
+          <FooterLinkColumn title="Industries" links={footerIndustryLinks} />
 
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.14em] text-white">
@@ -86,19 +77,19 @@ export default function Footer() {
 
         <div className="mt-8 grid gap-3 border-t border-white/10 pt-6 md:grid-cols-3">
           <ContactAction
-            href="#contact"
+            href={contactActionLinks.projectEnquiry}
             icon={<Mail className="h-5 w-5" aria-hidden="true" />}
             eyebrow="Project enquiry"
             label="Send project details"
           />
           <ContactAction
-            href="#contact"
+            href={contactActionLinks.technicalDiscussion}
             icon={<Phone className="h-5 w-5" aria-hidden="true" />}
             eyebrow="Technical discussion"
             label="Request a call back"
           />
           <ContactAction
-            href="#contact"
+            href={contactActionLinks.siteRequirements}
             icon={<MapPin className="h-5 w-5" aria-hidden="true" />}
             eyebrow="Site requirements"
             label="Discuss project location"
@@ -108,8 +99,9 @@ export default function Footer() {
         <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} Tetra Power Solutions. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <Link href="#" className="transition hover:text-slate-300">Privacy</Link>
-            <Link href="#" className="transition hover:text-slate-300">Terms</Link>
+            {legalLinks.map((link) => (
+              <LegalLink key={link.label} href={link.href} label={link.label} />
+            ))}
           </div>
         </div>
       </div>
@@ -173,19 +165,58 @@ function ContactAction({ href, icon, eyebrow, label }: ContactActionProps) {
 }
 
 type SocialLinkProps = {
-  href: string;
+  href: string | null;
   label: string;
   icon: React.ReactNode;
 };
 
+const socialLinkClassName =
+  "flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/[0.025] text-lime-400 transition hover:border-lime-400/45 hover:bg-lime-400/10 hover:text-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400";
+
+const socialIcons: Record<string, React.ReactNode> = {
+  LinkedIn: <LinkedInIcon className="h-5 w-5" />,
+  Facebook: <FacebookIcon className="h-5 w-5" />,
+  YouTube: <YouTubeIcon className="h-5 w-5" />,
+  "Email TPS": <Mail className="h-5 w-5" aria-hidden="true" />,
+};
+
 function SocialLink({ href, label, icon }: SocialLinkProps) {
+  if (!href) {
+    return (
+      <span
+        aria-label={label}
+        aria-disabled="true"
+        className={`${socialLinkClassName} cursor-not-allowed opacity-60`}
+      >
+        {icon}
+      </span>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/[0.025] text-lime-400 transition hover:border-lime-400/45 hover:bg-lime-400/10 hover:text-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400"
-    >
+    <Link href={href} aria-label={label} className={socialLinkClassName}>
       {icon}
+    </Link>
+  );
+}
+
+type LegalLinkProps = {
+  href: string | null;
+  label: string;
+};
+
+function LegalLink({ href, label }: LegalLinkProps) {
+  if (!href) {
+    return (
+      <span aria-disabled="true" className="cursor-not-allowed opacity-60">
+        {label}
+      </span>
+    );
+  }
+
+  return (
+    <Link href={href} className="transition hover:text-slate-300">
+      {label}
     </Link>
   );
 }

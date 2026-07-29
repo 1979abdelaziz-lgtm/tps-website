@@ -3,15 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const navItems = [
-  { title: "Home", href: "/" },
-  { title: "Solutions", href: "/solutions" },
-  { title: "Industries", href: "/industries" },
-  { title: "Projects", href: "/projects" },
-  { title: "About", href: "/about" },
-  { title: "Contact", href: "/contact" },
-];
+import { mainNavItems } from "@/app/data/navigation";
 
 export default function Header() {
   const pathname = usePathname();
@@ -74,7 +66,7 @@ export default function Header() {
           aria-label="Main navigation"
           className="hidden items-center lg:ml-12 lg:flex lg:flex-1 lg:justify-center lg:gap-6 xl:ml-16 xl:gap-8"
         >
-          {navItems.map((item) => {
+          {mainNavItems.map((item) => {
             const isActive =
               item.href === "/"
                 ? pathname === "/"
@@ -142,7 +134,7 @@ export default function Header() {
           className="mx-auto flex h-full max-w-md flex-col px-6 pb-10 pt-8"
         >
           <div className="flex flex-col divide-y divide-white/10 border-y border-white/10">
-            {navItems.map((item) => {
+            {mainNavItems.map((item) => {
               const isActive =
                 item.href === "/"
                   ? pathname === "/"
