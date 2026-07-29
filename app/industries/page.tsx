@@ -31,12 +31,19 @@ export default function IndustriesPage() {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
               From manufacturing plants to data centres, TPS delivers integrated engineering solutions tailored to the unique demands of every industry.
             </p>
+            <Link
+              href="/contact"
+              className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-[#A3E635] px-7 py-4 text-sm font-extrabold text-[#071a24] shadow-[0_12px_30px_rgba(163,230,53,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#b7f15d] hover:shadow-[0_18px_38px_rgba(163,230,53,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-4 focus-visible:ring-offset-[#03101f]"
+            >
+              Discuss Your Industry
+              <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="py-0">
-        <div className="mx-auto max-w-[1280px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12">
+        <div className="mx-auto max-w-[1280px] px-6 pb-20 pt-12 sm:px-8 sm:pb-24 sm:pt-14 lg:px-12">
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <div className="flex items-center justify-center gap-5 sm:gap-7">
               <span className="h-px w-14 bg-[#16803b]/70 sm:w-24" aria-hidden="true" />
@@ -110,7 +117,7 @@ export default function IndustriesPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330]"
+            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#0f6330] hover:shadow-[0_18px_38px_rgba(19,118,58,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16803b] focus-visible:ring-offset-4"
           >
             Talk to Our Engineers
             <ArrowRight size={17} />

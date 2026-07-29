@@ -86,9 +86,9 @@ export default function ContactPage() {
             </p>
             <a
               href="#contact-form"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-emerald-500 px-6 py-3 font-semibold text-white transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+              className="mt-8 inline-flex items-center gap-3 rounded-xl bg-[#A3E635] px-7 py-4 text-sm font-extrabold text-[#071A24] shadow-[0_12px_30px_rgba(163,230,53,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#b6ef5a] hover:shadow-[0_16px_34px_rgba(163,230,53,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
             >
-              Start a Conversation
+              Talk to Our Engineers
               <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
           <div
             id="contact-form"
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8 lg:p-10"
+            className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8 lg:p-10"
           >
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-slate-950">

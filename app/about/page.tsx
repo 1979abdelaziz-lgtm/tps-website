@@ -104,6 +104,24 @@ export default function AboutPage() {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
               TPS is an engineering-led energy company focused on building reliable, efficient, and practical solutions through technical integrity, clear communication, and genuine customer partnership.
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 rounded-xl bg-[#A3E635] px-7 py-4 text-sm font-extrabold text-[#071a24] shadow-[0_12px_30px_rgba(163,230,53,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#b6ef5a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
+              >
+                Contact TPS
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                href="/solutions"
+                className="inline-flex items-center gap-3 rounded-xl border border-white/45 bg-white/[0.04] px-7 py-4 text-sm font-extrabold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#A3E635]/75 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
+              >
+                Explore Our Solutions
+                <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -255,10 +273,10 @@ export default function AboutPage() {
             </p>
           </div>
           <Link
-            href="/contact"
-            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330]"
+            href="/solutions"
+            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16803b] focus-visible:ring-offset-2"
           >
-            Contact TPS
+            Explore Our Solutions
             <ArrowRight size={18} />
           </Link>
         </div>

@@ -37,8 +37,8 @@ export default function ProjectsPage() {
         <div className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-[1440px] items-center px-5 py-14 sm:px-7 lg:px-10 lg:py-16 xl:px-12">
           <div className="max-w-[650px]">
             <h1 className="text-5xl font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-              <span className="block">Projects</span>
-              <span className="mt-1 block text-[#A3E635]">Coming Soon</span>
+              <span className="block">Building Our</span>
+              <span className="mt-1 block text-[#A3E635]">First Success Stories</span>
             </h1>
 
             <p className="mt-8 max-w-xl text-xl font-semibold leading-relaxed text-white sm:text-2xl">
