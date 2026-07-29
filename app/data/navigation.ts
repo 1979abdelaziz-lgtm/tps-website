@@ -1,4 +1,4 @@
-import { industries } from "./industries";
+import { markets } from "./markets";
 import { solutions } from "./solutions";
 
 export type NavLink = {
@@ -14,7 +14,7 @@ export type MainNavItem = {
 export const mainNavItems: MainNavItem[] = [
   { title: "Home", href: "/" },
   { title: "Solutions", href: "/solutions" },
-  { title: "Industries", href: "/industries" },
+  { title: "Markets", href: "/markets" },
   { title: "Projects", href: "/projects" },
   { title: "About", href: "/about" },
   { title: "Contact", href: "/contact" },
@@ -31,9 +31,9 @@ export const footerSolutionLinks: NavLink[] = solutions.map((solution) => ({
   href: "/solutions",
 }));
 
-export const footerIndustryLinks: NavLink[] = industries.map((industry) => ({
-  label: industry.title,
-  href: "/industries",
+export const footerMarketLinks: NavLink[] = markets.map((market) => ({
+  label: market.title,
+  href: "/markets",
 }));
 
 export type ExternalLink = {

@@ -6,11 +6,11 @@ import {
   Factory,
   Flame,
   HeartPulse,
-  SunMedium,
+  Hotel,
   TowerControl,
 } from "lucide-react";
 
-export type Industry = {
+export type Market = {
   icon: LucideIcon;
   title: string;
   challenge: string;
@@ -20,7 +20,7 @@ export type Industry = {
   imageClassName?: string;
 };
 
-export const industries: Industry[] = [
+export const markets: Market[] = [
   {
     icon: Factory,
     title: "Manufacturing",
@@ -80,13 +80,13 @@ export const industries: Industry[] = [
     imagePosition: "center",
   },
   {
-    icon: SunMedium,
-    title: "Renewable Energy",
-    challenge: "Grid Integration",
+    icon: Hotel,
+    title: "Tourism, Hotels & Resorts",
+    challenge: "Guest Comfort & Efficiency",
     description:
-      "Solar, storage, and energy-management solutions that support cleaner generation and stable system integration.",
+      "Reliable power, intelligent controls, and energy-management solutions that improve guest comfort, operational efficiency, and resort resilience.",
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85",
     imagePosition: "center",
   },
   {

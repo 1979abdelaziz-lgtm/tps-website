@@ -4,7 +4,7 @@ import { ArrowUpRight, ChevronRight, Mail, MapPin, Phone } from "lucide-react";
 import {
   companyLinks,
   contactActionLinks,
-  footerIndustryLinks,
+  footerMarketLinks,
   footerSolutionLinks,
   legalLinks,
   socialLinks,
@@ -62,7 +62,7 @@ export default function Footer() {
 
           <FooterLinkColumn title="Company" links={companyLinks} />
           <FooterLinkColumn title="Solutions" links={footerSolutionLinks} />
-          <FooterLinkColumn title="Industries" links={footerIndustryLinks} />
+          <FooterLinkColumn title="Markets" links={footerMarketLinks} />
 
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.14em] text-white">

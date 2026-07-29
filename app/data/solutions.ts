@@ -80,8 +80,13 @@ export const solutions: Solution[] = [
     icon: Cpu,
     title: "Industrial Automation",
     description:
-      "Industrial automation solutions that connect equipment, operators, and data through dependable control architecture.",
-    capabilities: ["PLC systems", "SCADA and HMI", "Industrial communication"],
+      "Integrated automation and digitalisation solutions that connect equipment, operators, data, and intelligent applications through dependable control architecture.",
+    capabilities: [
+      "PLC, SCADA and HMI systems",
+      "Industrial digitalisation and connected operations",
+      "AI-driven analytics and performance optimisation",
+      "Mobile applications for monitoring, alerts, reporting and role-based control",
+    ],
     image: "/images/solutions/industrial-automation.jpg",
     imagePosition: "center",
   },

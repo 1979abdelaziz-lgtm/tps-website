@@ -46,9 +46,9 @@ const values = [
   },
   {
     icon: Lightbulb,
-    title: "Practical Innovation",
+    title: "AI-Driven Energy Innovation",
     description:
-      "We apply technology where it improves reliability, efficiency, visibility, or ease of operation.",
+      "We combine deep energy expertise with artificial intelligence and digital technologies to improve efficiency, reliability, visibility, and decision-making.",
   },
   {
     icon: Users,
@@ -133,15 +133,15 @@ export default function AboutPage() {
               Who We Are
             </p>
             <h2 className="mt-5 text-3xl font-black tracking-[-0.03em] sm:text-5xl">
-              A new company with a clear engineering standard.
+              More than 20 years of expertise behind every solution.
             </h2>
           </div>
           <div className="space-y-5 text-lg leading-8 text-[#40545d]">
             <p>
-              Tetra Power Solutions was established to provide integrated energy engineering with a simple principle: understand the real requirement, design responsibly, and deliver value that the customer can trust.
+              Tetra Power Solutions brings together energy professionals with more than 20 years of hands-on industry experience across power generation, combined heat and power (CHP), electrical systems, automation, and energy management.
             </p>
             <p>
-              We are at the beginning of our journey, and we choose to build our reputation honestly—through real work, dependable relationships, and solutions that perform as intended.
+              Our experience extends from engineering, commissioning, operation, and optimisation to AI applications in the energy sector. Clients work with a team that understands complex energy systems in practice and applies proven engineering judgement to deliver reliable, efficient, and future-ready solutions.
             </p>
           </div>
         </div>
