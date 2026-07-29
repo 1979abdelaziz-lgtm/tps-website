@@ -34,12 +34,23 @@ export default function SolutionsPage() {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
               From power generation to intelligent energy management, TPS delivers integrated engineering solutions across the complete energy lifecycle.
             </p>
+            <Link
+              href="/contact"
+              className="group mt-8 inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-[#74C043] px-7 py-3.5 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_34px_rgba(116,192,67,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#86D64F] hover:shadow-[0_18px_38px_rgba(116,192,67,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
+            >
+              Discuss Your Project
+              <ArrowRight
+                size={17}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="py-0">
-        <div className="mx-auto max-w-[1280px] px-6 py-12 sm:px-8 sm:py-14 lg:px-12">
+        <div className="mx-auto max-w-[1280px] px-6 pb-20 pt-12 sm:px-8 sm:pb-24 sm:pt-14 lg:px-12 lg:pb-24">
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <div className="flex items-center justify-center gap-5 sm:gap-7">
               <span className="h-px w-14 bg-[#16803b]/70 sm:w-24" aria-hidden="true" />
@@ -116,10 +127,10 @@ export default function SolutionsPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330]"
+            className="group inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0f6330] hover:shadow-[0_16px_34px_rgba(19,118,58,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#58a832] focus-visible:ring-offset-2 focus-visible:ring-offset-[#edf8f0]"
           >
             Talk to Our Engineers
-            <ArrowRight size={17} />
+            <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
       </section>
