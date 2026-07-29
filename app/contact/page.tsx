@@ -22,8 +22,8 @@ const contactItems = [
   },
   {
     title: "Phone",
-    value: "+20 000 000 0000",
-    href: "tel:+200000000000",
+    value: "+20 1500999409",
+    href: "tel:+201500999409",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
