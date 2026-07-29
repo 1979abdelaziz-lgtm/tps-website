@@ -255,7 +255,7 @@ export default function AboutPage() {
             </p>
           </div>
           <Link
-            href="/#contact"
+            href="/contact"
             className="inline-flex shrink-0 items-center gap-3 rounded-xl bg-[#13763a] px-7 py-4 text-sm font-extrabold text-white shadow-[0_10px_28px_rgba(19,118,58,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0f6330]"
           >
             Contact TPS
