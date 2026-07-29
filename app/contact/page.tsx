@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 const contactItems = [
   {
     title: "Email",
-    value: "info@tetrapowersolutions.com",
-    href: "mailto:info@tetrapowersolutions.com",
+    value: "info@tetra.eg.com",
+    href: "mailto:info@tetra.eg.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
         <path
