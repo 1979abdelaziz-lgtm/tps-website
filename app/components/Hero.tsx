@@ -57,7 +57,7 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="#solutions"
+              href="/solutions"
               className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#74C043] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white shadow-[0_14px_34px_rgba(116,192,67,.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#86D64F] hover:shadow-[0_18px_38px_rgba(116,192,67,.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
             >
               Explore solutions
@@ -65,7 +65,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="#contact"
+              href="/contact"
               className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#03101f]/25 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.04em] text-white backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#A3E635] hover:bg-white/[0.06] hover:text-[#C7F36A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#03101f]"
             >
               Contact us
