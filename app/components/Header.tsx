@@ -123,7 +123,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`fixed inset-0 top-[72px] bg-[#03101f] transition-all duration-300 lg:hidden ${
+        className={`absolute inset-x-0 top-full z-40 h-[calc(100dvh-72px)] overflow-y-auto bg-[#020817]/98 shadow-2xl backdrop-blur-md transition-all duration-300 lg:hidden ${
           menuOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-4 opacity-0"
