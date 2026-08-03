@@ -91,8 +91,8 @@ export default function Footer() {
           <ContactAction
             href={contactActionLinks.siteRequirements}
             icon={<MapPin className="h-5 w-5" aria-hidden="true" />}
-            eyebrow="Site requirements"
-            label="Discuss project location"
+            eyebrow="Site assessment"
+            label="Request a site survey"
           />
         </div>
 

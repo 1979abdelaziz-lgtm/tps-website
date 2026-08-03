@@ -15,23 +15,25 @@ export default function SolutionsPage() {
     <main className="min-h-screen bg-[#f6f8f7] text-[#071a24]">
       <section className="relative isolate min-h-[590px] overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white sm:min-h-[640px]">
         <Image
-          src="/images/tps-solutions-hero.png"
+          src="/images/tps-solutions-hero-2.png"
           alt="Integrated TPS energy solutions combining power generation, renewable energy, battery storage, and electrical infrastructure"
           fill
           priority
           sizes="100vw"
           className="object-cover object-[68%_center] sm:object-[66%_center] lg:object-right"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,0.98)_0%,rgba(3,16,31,0.91)_38%,rgba(3,16,31,0.55)_64%,rgba(3,16,31,0.18)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.14)_0%,transparent_48%,rgba(3,16,31,0.58)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[590px] max-w-[1280px] items-start px-6 pb-20 pt-16 sm:min-h-[640px] sm:px-8 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,0.98)_0%,rgba(3,16,31,0.92)_38%,rgba(3,16,31,0.44)_64%,rgba(3,16,31,0.04)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.08)_0%,transparent_52%,rgba(3,16,31,0.36)_100%)]" />
+        <div className="absolute inset-y-0 right-0 w-[52%] bg-[radial-gradient(circle_at_78%_42%,rgba(125,211,252,0.16)_0%,rgba(56,189,248,0.08)_38%,transparent_72%)] mix-blend-screen" />
+
+        <div className="relative z-10 mx-auto flex min-h-[590px] max-w-[1280px] items-start px-6 pb-20 pt-16 sm:min-h-[640px] sm:px-8 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
           <div className="max-w-3xl lg:-translate-x-8">
-            <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+            <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] drop-shadow-[0_3px_14px_rgba(0,0,0,0.72)] sm:text-6xl lg:text-7xl">
               Integrated solutions for a more reliable energy future.
             </h1>
             <div className="mt-7 h-1 w-24 rounded-full bg-[#A3E635]" />
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/90 drop-shadow-[0_2px_10px_rgba(0,0,0,0.72)] sm:text-xl">
               From power generation to intelligent energy management, TPS delivers integrated engineering solutions across the complete energy lifecycle.
             </p>
             <Link

@@ -136,7 +136,7 @@ export async function POST(request: Request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "TPS Website <website@tetra-power.com>",
+      from: "TPS Website <website@send.tetra-power.com>",
       to: ["info@tetra-power.com"],
       reply_to: email,
       subject: `New Website Enquiry — ${name}`,
