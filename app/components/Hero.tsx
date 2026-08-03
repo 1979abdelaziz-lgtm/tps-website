@@ -9,7 +9,7 @@ export default function Hero() {
       className="relative isolate min-h-[590px] overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white sm:min-h-[640px]"
     >
       <Image
-        src="/images/tps-hero-neon-grid-v3.webp"
+        src="/images/tps-hero-neon-grid-v5.webp"
         alt="Integrated energy infrastructure combining power generation, renewable energy, battery storage, and smart-grid systems"
         fill
         priority
