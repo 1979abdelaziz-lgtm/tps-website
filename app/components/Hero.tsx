@@ -19,11 +19,15 @@ export default function Hero() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,1)_0%,rgba(3,16,31,0.96)_36%,rgba(3,16,31,0.72)_62%,rgba(3,16,31,0.28)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,16,31,0.98)_0%,rgba(3,16,31,0.90)_34%,rgba(3,16,31,0.42)_62%,rgba(3,16,31,0.04)_100%)]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.20)_0%,rgba(3,16,31,0.08)_48%,rgba(3,16,31,0.70)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,16,31,0.08)_0%,transparent_52%,rgba(3,16,31,0.34)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 right-0 w-[52%] bg-[radial-gradient(circle_at_78%_42%,rgba(125,211,252,0.14)_0%,rgba(56,189,248,0.07)_38%,transparent_72%)] mix-blend-screen"
       />
 
       <div className="relative mx-auto min-h-[590px] max-w-[1280px] px-6 pb-16 pt-16 sm:min-h-[640px] sm:px-8 sm:pt-20 lg:px-12 lg:pb-20 lg:pt-24">

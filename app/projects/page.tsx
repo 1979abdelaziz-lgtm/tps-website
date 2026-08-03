@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#03101f]">
-      <section className="relative isolate min-h-[590px] overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white sm:min-h-[640px]">
+    <main className="bg-[#03101f]">
+      <section className="relative isolate overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white">
         <Image
           src="/images/projects/projects-coming-soon.png"
           alt="Future energy projects featuring power transmission, wind and solar infrastructure"
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
           className="absolute inset-0 -z-10 opacity-35 [background-image:linear-gradient(rgba(163,230,53,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(163,230,53,0.045)_1px,transparent_1px)] [background-size:48px_48px]"
         />
 
-        <div className="relative mx-auto flex min-h-[590px] max-w-[1280px] items-start px-6 pb-20 pt-16 sm:min-h-[640px] sm:px-8 sm:pt-20 lg:px-12 lg:pb-24 lg:pt-24">
+        <div className="relative mx-auto flex max-w-[1280px] items-start px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
           <div className="max-w-3xl lg:-translate-x-8">
             <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.035em] text-white sm:text-6xl lg:text-7xl">
               <span className="block">Building Our</span>
