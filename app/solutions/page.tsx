@@ -15,7 +15,7 @@ export default function SolutionsPage() {
     <main className="min-h-screen bg-[#f6f8f7] text-[#071a24]">
       <section className="relative isolate min-h-[590px] overflow-hidden border-y border-[#A3E635]/45 bg-[#03101f] text-white sm:min-h-[640px]">
         <Image
-          src="/images/tps-solutions-hero-2.png"
+          src="/images/tps-solutions-hero-3.png"
           alt="Integrated TPS energy solutions combining power generation, renewable energy, battery storage, and electrical infrastructure"
           fill
           priority
